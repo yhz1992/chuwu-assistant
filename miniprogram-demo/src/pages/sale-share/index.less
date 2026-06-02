@@ -1,0 +1,180 @@
+@import '../../styles/variables.less';
+@import '../../styles/mixins.less';
+
+.sale-share {
+  min-height: 100vh;
+  background: @bg;
+
+  &-scroll {
+    padding: 0 @spacing-24 @spacing-48;
+  }
+
+  // 头部
+  &-header {
+    padding: @spacing-32 0 @spacing-24;
+  }
+
+  &-title {
+    display: block;
+    font-size: @font-xxl;
+    font-weight: 700;
+    color: @text-1;
+    margin-bottom: @spacing-12;
+    line-height: 1.3;
+  }
+
+  &-time {
+    font-size: @font-sm;
+    color: @text-3;
+  }
+
+  // 清单图片
+  &-image-wrap {
+    margin-bottom: @spacing-24;
+  }
+
+  &-image {
+    width: 100%;
+    border-radius: @radius-lg;
+    box-shadow: @shadow-md;
+  }
+
+  // 商品列表
+  &-items {
+    background: @card;
+    border-radius: @radius-lg;
+    padding: @spacing-24;
+    box-shadow: @shadow-sm;
+    margin-bottom: @spacing-24;
+
+    &-title {
+      display: block;
+      font-size: @font-md;
+      font-weight: 600;
+      color: @text-1;
+      margin-bottom: @spacing-16;
+    }
+  }
+
+  &-total-price {
+    color: @danger;
+    font-weight: 600;
+  }
+
+  &-item {
+    display: flex;
+    gap: @spacing-16;
+    padding: @spacing-16 0;
+    border-bottom: 2rpx solid @divider;
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    &-image-wrap {
+      width: 140rpx;
+      height: 140rpx;
+      flex-shrink: 0;
+      border-radius: @radius-md;
+      overflow: hidden;
+      background: @bg;
+    }
+
+    &-image {
+      width: 100%;
+      height: 100%;
+    }
+
+    &-image-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: @primary-light;
+      font-size: 40rpx;
+    }
+
+    &-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+    }
+
+    &-name {
+      font-size: @font-md;
+      font-weight: 600;
+      color: @text-1;
+      margin-bottom: @spacing-4;
+      .text-ellipsis(1);
+    }
+
+    &-char {
+      font-size: @font-sm;
+      color: @text-3;
+      margin-bottom: @spacing-8;
+      .text-ellipsis(1);
+    }
+
+    &-footer {
+      display: flex;
+      align-items: center;
+      gap: @spacing-8;
+    }
+
+    &-price {
+      font-size: @font-md;
+      font-weight: 700;
+      color: @danger;
+    }
+
+    &-badge {
+      font-size: @font-xs;
+      color: @success;
+      background: #E8F5EE;
+      padding: @spacing-4 @spacing-12;
+      border-radius: @radius-pill;
+    }
+  }
+
+  // 免责声明
+  &-disclaimer {
+    background: #FFF8E6;
+    border-radius: @radius-md;
+    padding: @spacing-16 @spacing-20;
+    margin-bottom: @spacing-24;
+
+    &-text {
+      font-size: @font-sm;
+      color: #B8860B;
+      line-height: 1.5;
+    }
+  }
+
+  // 底部按钮
+  &-actions {
+    padding-bottom: @spacing-48;
+  }
+
+  &-btn {
+    height: 88rpx;
+    background: linear-gradient(135deg, @primary, @primary-dark);
+    border-radius: @radius-pill;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:active {
+      opacity: 0.85;
+    }
+
+    &-text {
+      font-size: @font-md;
+      font-weight: 500;
+      color: #ffffff;
+    }
+  }
+}

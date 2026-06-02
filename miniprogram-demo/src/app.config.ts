@@ -1,0 +1,28 @@
+export default defineAppConfig({
+  pages: [
+    'pages/index/index',
+    'pages/login/index',
+    'pages/home/index',
+    'pages/collections/index',
+    'pages/collection-add/index',
+    'pages/collection-detail/index',
+    'pages/sale-list/index',
+    'pages/select-items/index',
+    'pages/edit-sale-info/index',
+    'pages/template-select/index',
+    'pages/generate-result/index',
+    'pages/sale-share/index',
+    'pages/mine/index',
+    'pages/wishlist/index',
+    'pages/wishlist-add/index',
+    'pages/feedback/index',
+    'pages/template-center/index',
+    'pages/my-shares/index',
+  ],
+  window: {
+    backgroundTextStyle: 'light',
+    navigationBarBackgroundColor: '#FFFFFF',
+    navigationBarTitleText: '出物小助手',
+    navigationBarTextStyle: 'black',
+  },
+})

@@ -1,0 +1,18 @@
+@import './styles/variables.less';
+@import './styles/reset.less';
+@import './styles/mixins.less';
+
+page {
+  background-color: @bg;
+  font-family: PingFang SC, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  color: @text-1;
+  font-size: @font-md;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+// 全局页面过渡
+.page-content {
+  .fade-up();
+}

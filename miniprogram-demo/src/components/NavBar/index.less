@@ -1,0 +1,45 @@
+@import '../../styles/variables.less';
+@import '../../styles/mixins.less';
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 88rpx;
+  padding: 0 @spacing-24;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(20rpx);
+  -webkit-backdrop-filter: blur(20rpx);
+  border-bottom: 1rpx solid rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  &-left {
+    width: 80rpx;
+    display: flex;
+    align-items: center;
+  }
+
+  &-back-btn {
+    .icon-btn(60rpx);
+    background: transparent;
+    box-shadow: none;
+  }
+
+  &-title {
+    flex: 1;
+    text-align: center;
+    font-size: @font-lg;
+    font-weight: 600;
+    color: @text-1;
+    .text-ellipsis();
+  }
+
+  &-right {
+    width: 80rpx;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}

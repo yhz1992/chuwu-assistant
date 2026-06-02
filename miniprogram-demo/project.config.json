@@ -1,0 +1,15 @@
+{
+  "miniprogramRoot": "./dist",
+  "projectname": "出物小助手",
+  "description": "帮谷圈/小卡/娃圈用户快速记录收藏，并一键生成可分享的出物长图和交易文案",
+  "appid": "wx84bc2a7c986210fe",
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "compileHotReLoad": false,
+    "postcss": true,
+    "minified": false
+  },
+  "compileType": "miniprogram"
+}

@@ -1,0 +1,202 @@
+@import '../../styles/variables.less';
+@import '../../styles/mixins.less';
+
+.collection-detail {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: @bg;
+
+  &-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400rpx;
+    font-size: @font-md;
+    color: @text-3;
+    gap: @spacing-16;
+  }
+
+  &-retry {
+    padding: @spacing-8 @spacing-24;
+    border-radius: @radius-pill;
+    border: 1rpx solid @primary;
+    color: @primary;
+    font-size: @font-sm;
+  }
+
+  &-content { flex: 1; }
+
+  &-swiper-wrap {
+    position: relative;
+    width: 100%;
+    background: #1A1A1A;
+  }
+
+  &-swiper {
+    width: 100%;
+    height: 750rpx;
+  }
+
+  &-swiper-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-swiper-image {
+    width: 100%;
+    height: 100%;
+  }
+
+  &-swiper-count {
+    position: absolute;
+    right: @spacing-24;
+    bottom: @spacing-16;
+    padding: 4rpx @spacing-16;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: @radius-pill;
+    color: #fff;
+    font-size: @font-xs;
+    backdrop-filter: blur(8rpx);
+  }
+
+  &-swiper-placeholder {
+    width: 100%;
+    height: 400rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: @card;
+    gap: @spacing-12;
+
+    &-text {
+      font-size: @font-sm;
+      color: @text-3;
+    }
+  }
+
+  &-card {
+    margin: @spacing-16 @spacing-24;
+    padding: @spacing-24;
+    background: @card;
+    border-radius: @radius-lg;
+    box-shadow: @shadow-sm;
+  }
+
+  &-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: @spacing-16;
+    padding-bottom: @spacing-16;
+    border-bottom: 1rpx solid @divider;
+  }
+
+  &-card-title {
+    display: block;
+    font-size: @font-md;
+    font-weight: 600;
+    color: @primary;
+    margin-bottom: @spacing-16;
+    padding-bottom: @spacing-12;
+    border-bottom: 1rpx solid @divider;
+  }
+
+  &-name {
+    flex: 1;
+    font-size: @font-lg;
+    font-weight: 600;
+    color: @text-1;
+    margin-right: @spacing-16;
+    .text-ellipsis(1);
+  }
+
+  &-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: @spacing-4;
+  }
+
+  &-info-row {
+    display: flex;
+    align-items: flex-start;
+    min-height: 56rpx;
+
+    &--column {
+      flex-direction: column;
+
+      .collection-detail-info-label { margin-bottom: @spacing-8; }
+      .collection-detail-info-value { width: 100%; line-height: 1.6; }
+    }
+  }
+
+  &-info-label {
+    width: 120rpx;
+    font-size: @font-sm;
+    color: @text-3;
+    flex-shrink: 0;
+    line-height: 1.8;
+  }
+
+  &-info-value {
+    flex: 1;
+    font-size: @font-sm;
+    color: @text-1;
+    line-height: 1.8;
+    word-break: break-all;
+
+    &--price { color: @danger; font-weight: 600; }
+  }
+
+  &-spacer { height: 140rpx; }
+
+  &-actions {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    padding: @spacing-16 @spacing-24;
+    padding-bottom: calc(@spacing-16 + env(safe-area-inset-bottom));
+    background: @card;
+    box-shadow: 0 -4rpx 16rpx rgba(0, 0, 0, 0.06);
+    gap: @spacing-12;
+    z-index: 10;
+  }
+
+  &-actions-btn {
+    flex: 1;
+    height: 72rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: @spacing-8;
+    border-radius: @radius-lg;
+    border: 1rpx solid @border;
+    background: @card;
+
+    &--primary {
+      flex: 2;
+      background: @primary;
+      border-color: transparent;
+      .collection-detail-actions-btn-text { color: #fff; }
+    }
+
+    &--success {
+      background: @success;
+      border-color: transparent;
+      .collection-detail-actions-btn-text { color: #fff; }
+    }
+
+    &:last-child { flex: 0 0 72rpx; border-radius: @radius-lg; }
+
+    &-text {
+      font-size: @font-sm;
+      color: @text-2;
+      font-weight: 500;
+    }
+  }
+}

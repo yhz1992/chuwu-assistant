@@ -1,0 +1,184 @@
+@import '../../styles/variables.less';
+@import '../../styles/mixins.less';
+
+.mine {
+  padding: 0 @spacing-24 @spacing-48;
+
+  // 用户信息
+  &-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: @spacing-48 0 @spacing-32;
+    gap: @spacing-16;
+
+    &:active {
+      opacity: 0.85;
+    }
+  }
+
+  &-avatar-wrap {
+    width: 128rpx;
+    height: 128rpx;
+    border-radius: 50%;
+    overflow: hidden;
+    background: @primary-light;
+    box-shadow: 0 8rpx 24rpx rgba(79, 110, 247, 0.18);
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: -2rpx;
+      border-radius: 50%;
+      background: @gradient-primary;
+      z-index: -1;
+      opacity: 0.15;
+    }
+  }
+
+  &-avatar {
+    width: 100%;
+    height: 100%;
+  }
+
+  &-avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: @primary-light;
+  }
+
+  &-nickname {
+    font-size: @font-xl;
+    font-weight: 700;
+    color: @text-1;
+  }
+
+  &-uid {
+    font-size: @font-sm;
+    color: @text-3;
+    margin-top: -8rpx;
+  }
+
+  // 数据统计卡片
+  &-stats {
+    display: flex;
+    gap: @spacing-12;
+    margin-bottom: @spacing-24;
+  }
+
+  &-stat-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: @spacing-24 @spacing-8;
+    background: @card;
+    border-radius: @radius-lg;
+    box-shadow: @shadow-sm;
+    transition: transform @transition-fast;
+
+    &:active {
+      transform: scale(0.96);
+    }
+  }
+
+  &-stat-value {
+    font-size: @font-xxl;
+    font-weight: 800;
+    color: @primary;
+    margin-bottom: @spacing-4;
+  }
+
+  &-stat-label {
+    font-size: @font-xs;
+    color: @text-3;
+    font-weight: 500;
+  }
+
+  // 功能菜单
+  &-menu {
+    background: @card;
+    border-radius: @radius-lg;
+    box-shadow: @shadow-sm;
+    overflow: hidden;
+    margin-bottom: @spacing-32;
+  }
+
+  &-menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 104rpx;
+    padding: 0 @spacing-24;
+    transition: background @transition-fast;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: @spacing-24;
+      right: @spacing-24;
+      height: 1rpx;
+      background: @divider;
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+
+    &:active {
+      background: @bg;
+    }
+
+    &-left {
+      display: flex;
+      align-items: center;
+      gap: @spacing-16;
+    }
+
+    &-icon-wrap {
+      width: 48rpx;
+      height: 48rpx;
+      border-radius: @radius-sm;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-label {
+      font-size: @font-md;
+      color: @text-1;
+      font-weight: 500;
+    }
+
+    &-right {
+      display: flex;
+      align-items: center;
+      gap: @spacing-8;
+    }
+
+    &-badge {
+      font-size: @font-xs;
+      color: @primary;
+      background: @primary-light;
+      padding: 4rpx @spacing-12;
+      border-radius: @radius-pill;
+      font-weight: 500;
+    }
+  }
+
+  // 退出登录/版本
+  &-version {
+    text-align: center;
+    padding-bottom: @spacing-48;
+
+    &-text {
+      font-size: @font-xs;
+      color: @text-4;
+    }
+  }
+}

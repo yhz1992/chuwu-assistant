@@ -1,0 +1,122 @@
+@import '../../styles/variables.less';
+@import '../../styles/mixins.less';
+
+.my-shares {
+  min-height: 100vh;
+  background: @bg;
+  padding: @spacing-24;
+
+  &-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300rpx;
+    font-size: @font-md;
+    color: @text-3;
+  }
+
+  // ===== 列表 =====
+  &-list {
+    display: flex;
+    flex-direction: column;
+    gap: @spacing-16;
+  }
+
+  // ===== 分享卡片 =====
+  &-card {
+    .card();
+    padding: @spacing-20 @spacing-24;
+  }
+
+  &-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: @spacing-16;
+  }
+
+  &-card-title {
+    font-size: @font-lg;
+    font-weight: 500;
+    color: @text-1;
+    flex: 1;
+    .text-ellipsis(1);
+    margin-right: @spacing-12;
+  }
+
+  &-card-status {
+    background: @status-sale-generated-bg;
+    border-radius: @radius-pill;
+    padding: 4rpx @spacing-12;
+  }
+
+  &-card-status-text {
+    font-size: @font-xs;
+    color: @status-sale-generated-text;
+  }
+
+  // ===== 统计数据 =====
+  &-card-stats {
+    display: flex;
+    gap: @spacing-32;
+    margin-bottom: @spacing-16;
+  }
+
+  &-card-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-card-stat-value {
+    font-size: @font-lg;
+    font-weight: 600;
+    color: @text-1;
+    margin-bottom: @spacing-4;
+  }
+
+  &-card-stat-label {
+    font-size: @font-xs;
+    color: @text-3;
+  }
+
+  // ===== 时间 =====
+  &-card-time {
+    display: block;
+    font-size: @font-sm;
+    color: @text-3;
+    margin-bottom: @spacing-16;
+  }
+
+  // ===== 操作按钮 =====
+  &-card-actions {
+    display: flex;
+    gap: @spacing-16;
+  }
+
+  &-card-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 64rpx;
+    border-radius: @radius-pill;
+    font-size: @font-sm;
+    font-weight: 500;
+
+    &--primary {
+      background: linear-gradient(135deg, @primary, @primary-dark);
+      color: #fff;
+    }
+
+    &--secondary {
+      background: @primary-light;
+      color: @primary-dark;
+      border: 2rpx solid @primary;
+    }
+  }
+
+  &-card-btn-text {
+    line-height: 1;
+  }
+}

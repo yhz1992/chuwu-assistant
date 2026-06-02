@@ -1,0 +1,56 @@
+@import './variables.less';
+
+page {
+  box-sizing: border-box;
+  background-color: @bg;
+  color: @text-1;
+  font-family: PingFang SC, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: @font-md;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+view,
+text,
+image,
+scroll-view,
+swiper {
+  box-sizing: border-box;
+}
+
+image {
+  display: block;
+}
+
+button {
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  outline: none;
+  font-family: inherit;
+
+  &::after {
+    display: none;
+  }
+}
+
+input,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  outline: none;
+  border: none;
+  background: transparent;
+}

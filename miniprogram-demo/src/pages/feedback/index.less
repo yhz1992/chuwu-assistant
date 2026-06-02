@@ -1,0 +1,103 @@
+@import '../../styles/variables.less';
+@import '../../styles/mixins.less';
+
+.feedback {
+  min-height: 100vh;
+  background: @bg;
+  padding-bottom: @spacing-24;
+
+  &-content {
+    height: 100vh;
+  }
+
+  // ===== 区块 =====
+  &-section {
+    background: @card;
+    margin: @spacing-16 @spacing-24;
+    border-radius: @radius-lg;
+    padding: @spacing-24;
+  }
+
+  &-section-title {
+    display: block;
+    font-size: @font-md;
+    font-weight: 500;
+    color: @text-1;
+    margin-bottom: @spacing-12;
+  }
+
+  &-section-desc {
+    display: block;
+    font-size: @font-sm;
+    color: @text-3;
+    margin-bottom: @spacing-16;
+  }
+
+  // ===== Picker =====
+  &-picker {
+    display: flex;
+    align-items: center;
+    height: 72rpx;
+    background: @bg;
+    border-radius: @radius-md;
+    padding: 0 @spacing-16;
+    font-size: @font-md;
+    color: @text-1;
+
+    &--empty {
+      color: @text-3;
+    }
+  }
+
+  // ===== Textarea =====
+  &-textarea {
+    width: 100%;
+    height: 280rpx;
+    background: @bg;
+    border-radius: @radius-md;
+    padding: @spacing-16;
+    font-size: @font-md;
+    color: @text-1;
+    box-sizing: border-box;
+    line-height: 1.5;
+  }
+
+  &-count {
+    display: block;
+    text-align: right;
+    font-size: @font-xs;
+    color: @text-3;
+    margin-top: @spacing-8;
+  }
+
+  // ===== Input =====
+  &-input {
+    width: 100%;
+    height: 72rpx;
+    background: @bg;
+    border-radius: @radius-md;
+    padding: 0 @spacing-16;
+    font-size: @font-md;
+    color: @text-1;
+    box-sizing: border-box;
+  }
+
+  // ===== 提交按钮 =====
+  &-bottom {
+    padding: @spacing-24;
+    padding-bottom: calc(@spacing-24 + env(safe-area-inset-bottom));
+  }
+
+  &-submit-btn {
+    .btn-primary();
+    width: 100%;
+
+    &--disabled {
+      opacity: 0.5;
+    }
+  }
+
+  &-submit-btn-text {
+    font-size: @font-lg;
+  }
+}

@@ -1,0 +1,185 @@
+-- H2 初始化脚本 (兼容 MySQL 语法模式)
+CREATE TABLE IF NOT EXISTS users (
+  id VARCHAR(32) NOT NULL PRIMARY KEY,
+  openid VARCHAR(64) NOT NULL,
+  unionid VARCHAR(64) DEFAULT NULL,
+  nickname VARCHAR(64) DEFAULT NULL,
+  avatar VARCHAR(512) DEFAULT NULL,
+  membership_level INT DEFAULT 0,
+  membership_expire_at TIMESTAMP DEFAULT NULL,
+  violation_count INT DEFAULT 0,
+  status VARCHAR(16) DEFAULT 'active',
+  banned_until TIMESTAMP DEFAULT NULL,
+  deleted_at TIMESTAMP DEFAULT NULL,
+  version INT DEFAULT 0,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_openid ON users(openid);
+
+CREATE TABLE IF NOT EXISTS collection_items (
+  id VARCHAR(32) NOT NULL PRIMARY KEY,
+  user_id VARCHAR(32) NOT NULL,
+  name VARCHAR(128) NOT NULL,
+  images JSON DEFAULT NULL,
+  cover_image VARCHAR(512) DEFAULT NULL,
+  work_name VARCHAR(128) DEFAULT NULL,
+  character_name VARCHAR(128) DEFAULT NULL,
+  item_type VARCHAR(32) NOT NULL,
+  purchase_price DECIMAL(10,2) DEFAULT NULL,
+  quantity INT DEFAULT 1,
+  purchase_channel VARCHAR(64) DEFAULT NULL,
+  purchase_date DATE DEFAULT NULL,
+  status VARCHAR(32) NOT NULL DEFAULT 'arrived',
+  note TEXT DEFAULT NULL,
+  is_for_sale TINYINT DEFAULT 0,
+  sale_price DECIMAL(10,2) DEFAULT NULL,
+  flaw_note TEXT DEFAULT NULL,
+  shipping_rule VARCHAR(32) DEFAULT NULL,
+  bargain_rule VARCHAR(32) DEFAULT NULL,
+  bundle_rule VARCHAR(256) DEFAULT NULL,
+  audit_status VARCHAR(16) DEFAULT 'pending',
+  audit_message VARCHAR(512) DEFAULT NULL,
+  custom_type_id VARCHAR(32) DEFAULT NULL,
+  search_text VARCHAR(512) DEFAULT NULL,
+  sort_index BIGINT DEFAULT 0,
+  deleted_at TIMESTAMP DEFAULT NULL,
+  version INT DEFAULT 0,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_ci_user_status ON collection_items(user_id, status, deleted_at);
+CREATE INDEX IF NOT EXISTS idx_ci_user_created ON collection_items(user_id, created_at DESC);
+
+CREATE TABLE IF NOT EXISTS sale_lists (
+  id VARCHAR(32) NOT NULL PRIMARY KEY,
+  user_id VARCHAR(32) NOT NULL,
+  title VARCHAR(128) DEFAULT NULL,
+  description TEXT DEFAULT NULL,
+  template_id VARCHAR(32) DEFAULT NULL,
+  status VARCHAR(16) NOT NULL DEFAULT 'draft',
+  total_count INT DEFAULT 0,
+  total_price DECIMAL(10,2) DEFAULT 0,
+  generated_image VARCHAR(512) DEFAULT NULL,
+  generated_pages JSON DEFAULT NULL,
+  share_id VARCHAR(32) DEFAULT NULL,
+  trade_rule JSON DEFAULT NULL,
+  watermark TINYINT DEFAULT 1,
+  deleted_at TIMESTAMP DEFAULT NULL,
+  version INT DEFAULT 0,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_sl_user ON sale_lists(user_id, status, created_at DESC);
+
+CREATE TABLE IF NOT EXISTS sale_list_items (
+  id VARCHAR(32) NOT NULL PRIMARY KEY,
+  sale_list_id VARCHAR(32) NOT NULL,
+  collection_item_id VARCHAR(32) DEFAULT NULL,
+  collection_snapshot JSON DEFAULT NULL,
+  name VARCHAR(128) NOT NULL,
+  image VARCHAR(512) DEFAULT NULL,
+  price DECIMAL(10,2) DEFAULT NULL,
+  quantity INT DEFAULT 1,
+  status VARCHAR(16) DEFAULT 'available',
+  flaw_note TEXT DEFAULT NULL,
+  shipping_rule VARCHAR(32) DEFAULT NULL,
+  bargain_rule VARCHAR(32) DEFAULT NULL,
+  bundle_rule VARCHAR(256) DEFAULT NULL,
+  note TEXT DEFAULT NULL,
+  sort_order INT DEFAULT 0,
+  sold_at TIMESTAMP DEFAULT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_sli_list ON sale_list_items(sale_list_id, sort_order);
+
+CREATE TABLE IF NOT EXISTS wishlist_items (
+  id VARCHAR(32) NOT NULL PRIMARY KEY,
+  user_id VARCHAR(32) NOT NULL,
+  name VARCHAR(128) NOT NULL,
+  image VARCHAR(512) DEFAULT NULL,
+  work_name VARCHAR(128) DEFAULT NULL,
+  character_name VARCHAR(128) DEFAULT NULL,
+  item_type VARCHAR(32) DEFAULT NULL,
+  target_price DECIMAL(10,2) DEFAULT NULL,
+  desire_level VARCHAR(16) DEFAULT 'normal',
+  status VARCHAR(16) DEFAULT 'want',
+  note TEXT DEFAULT NULL,
+  deleted_at TIMESTAMP DEFAULT NULL,
+  version INT DEFAULT 0,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_wi_user ON wishlist_items(user_id, status, deleted_at);
+
+CREATE TABLE IF NOT EXISTS templates (
+  id VARCHAR(32) NOT NULL PRIMARY KEY,
+  name VARCHAR(64) NOT NULL,
+  preview_image VARCHAR(512) DEFAULT NULL,
+  type VARCHAR(16) NOT NULL,
+  is_premium TINYINT DEFAULT 0,
+  is_active TINYINT DEFAULT 1,
+  config JSON DEFAULT NULL,
+  tags JSON DEFAULT NULL,
+  description VARCHAR(256) DEFAULT NULL,
+  sort_order INT DEFAULT 0,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS shares (
+  id VARCHAR(32) NOT NULL PRIMARY KEY,
+  sale_list_id VARCHAR(32) NOT NULL,
+  user_id VARCHAR(32) NOT NULL,
+  is_public TINYINT DEFAULT 1,
+  view_count INT DEFAULT 0,
+  revoked_at TIMESTAMP DEFAULT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS feedbacks (
+  id VARCHAR(32) NOT NULL PRIMARY KEY,
+  user_id VARCHAR(32) DEFAULT NULL,
+  type VARCHAR(16) NOT NULL,
+  content TEXT NOT NULL,
+  contact VARCHAR(128) DEFAULT NULL,
+  images JSON DEFAULT NULL,
+  status VARCHAR(16) DEFAULT 'pending',
+  handler_id VARCHAR(32) DEFAULT NULL,
+  handler_note TEXT DEFAULT NULL,
+  deleted_at TIMESTAMP DEFAULT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS event_logs (
+  id VARCHAR(32) NOT NULL PRIMARY KEY,
+  user_id VARCHAR(32) DEFAULT NULL,
+  event_name VARCHAR(64) NOT NULL,
+  properties JSON DEFAULT NULL,
+  client_info JSON DEFAULT NULL,
+  ip VARCHAR(64) DEFAULT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS custom_item_types (
+  id VARCHAR(32) NOT NULL PRIMARY KEY,
+  user_id VARCHAR(32) NOT NULL,
+  name VARCHAR(32) NOT NULL,
+  usage_count INT DEFAULT 0,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS reminders (
+  id VARCHAR(32) NOT NULL PRIMARY KEY,
+  user_id VARCHAR(32) NOT NULL,
+  target_type VARCHAR(32) NOT NULL,
+  target_id VARCHAR(32) NOT NULL,
+  remind_at TIMESTAMP NOT NULL,
+  status VARCHAR(16) DEFAULT 'pending',
+  message VARCHAR(256) DEFAULT NULL,
+  channel VARCHAR(32) DEFAULT 'in_app',
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

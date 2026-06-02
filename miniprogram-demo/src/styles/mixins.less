@@ -1,0 +1,189 @@
+@import './variables.less';
+
+// ===== 卡片样式 =====
+.card() {
+  background: @card;
+  border-radius: @radius-lg;
+  box-shadow: @shadow-sm;
+  padding: @spacing-24;
+}
+
+// ===== 按钮基础 =====
+.btn-base() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88rpx;
+  border-radius: @radius-lg;
+  font-size: @font-lg;
+  font-weight: 500;
+  border: none;
+  transition: all 0.2s ease;
+
+  &:active {
+    opacity: 0.85;
+    transform: scale(0.98);
+  }
+}
+
+.btn-primary() {
+  .btn-base();
+  background: @primary;
+  color: #FFFFFF;
+
+  &:active {
+    background: @primary-dark;
+  }
+}
+
+.btn-secondary() {
+  .btn-base();
+  background: @primary-light;
+  color: @primary;
+  border: 2rpx solid @primary;
+
+  &:active {
+    background: darken(@primary-light, 3%);
+  }
+}
+
+.btn-ghost() {
+  .btn-base();
+  background: @card;
+  color: @text-2;
+  border: 2rpx solid @border;
+}
+
+.btn-danger() {
+  .btn-base();
+  background: @danger;
+  color: #FFFFFF;
+}
+
+// ===== 状态标签 =====
+.status-tag() {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36rpx;
+  padding: 0 @spacing-12;
+  border-radius: @radius-pill;
+  font-size: @font-xs;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+// ===== 文本截断 =====
+.text-ellipsis(@lines: 1) when (@lines = 1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-ellipsis(@lines: 1) when (@lines > 1) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: @lines;
+  overflow: hidden;
+}
+
+// ===== 搜索栏公共样式 =====
+.search-bar() {
+  display: flex;
+  align-items: center;
+  padding: @spacing-16 @spacing-24;
+  gap: @spacing-16;
+  background: @card;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+// ===== 筛选标签栏 =====
+.filter-bar() {
+  display: flex;
+  align-items: center;
+  padding: @spacing-12 @spacing-24;
+  background: @card;
+  border-bottom: 1rpx solid @border;
+}
+
+// ===== 表单区域卡片 =====
+.form-section() {
+  margin: @spacing-16 @spacing-24;
+  padding: @spacing-24;
+  background: @card;
+  border-radius: @radius-lg;
+}
+
+// ===== 玻璃拟态卡片 =====
+.glass-card() {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(24rpx);
+  -webkit-backdrop-filter: blur(24rpx);
+  border: 1rpx solid rgba(255, 255, 255, 0.5);
+  border-radius: @radius-lg;
+  box-shadow: @shadow-md;
+}
+
+// ===== 可交互卡片（带按压反馈） =====
+.interactive-card() {
+  .card();
+  transition: transform @transition-fast, box-shadow @transition-fast;
+  &:active {
+    transform: scale(0.98);
+    box-shadow: @shadow-card-hover;
+  }
+}
+
+// ===== 圆形图标按钮 =====
+.icon-btn(@size: 72rpx) {
+  width: @size;
+  height: @size;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: @card;
+  box-shadow: @shadow-sm;
+  transition: all @transition-fast;
+  &:active {
+    background: @divider;
+    transform: scale(0.95);
+  }
+}
+
+// ===== 页面区块 =====
+.page-section() {
+  padding: @spacing-24;
+  margin-bottom: @spacing-16;
+}
+
+// ===== 骨架屏占位 =====
+.skeleton() {
+  background: linear-gradient(90deg, @divider 25%, @border 50%, @divider 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+// ===== 页面入场动画 =====
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up() {
+  animation: fade-up 0.35s ease both;
+}

@@ -1,0 +1,180 @@
+@import '../../styles/variables.less';
+@import '../../styles/mixins.less';
+
+.template-center {
+  min-height: 100vh;
+  background: @bg;
+  padding-bottom: @spacing-24;
+
+  &-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300rpx;
+    font-size: @font-md;
+    color: @text-3;
+  }
+
+  // ===== 分类标签 =====
+  &-tabs {
+    padding: @spacing-16 @spacing-24;
+    background: @card;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  &-tabs-scroll {
+    display: flex;
+    white-space: nowrap;
+  }
+
+  &-tab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 60rpx;
+    padding: 0 @spacing-24;
+    margin-right: @spacing-16;
+    border-radius: @radius-pill;
+    background: @bg;
+    border: 2rpx solid @border;
+
+    &--active {
+      background: linear-gradient(135deg, @primary, @primary-dark);
+      border-color: transparent;
+    }
+  }
+
+  &-tab-text {
+    font-size: @font-sm;
+    color: @text-2;
+
+    &--active {
+      color: #fff;
+      font-weight: 500;
+    }
+  }
+
+  // ===== 模板网格 =====
+  &-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: @spacing-16;
+    padding: 0 @spacing-24;
+  }
+
+  // ===== 模板卡片 =====
+  &-card {
+    .card();
+    padding: @spacing-16;
+    overflow: hidden;
+  }
+
+  &-card-preview {
+    width: 100%;
+    height: 240rpx;
+    border-radius: @radius-md;
+    overflow: hidden;
+    margin-bottom: @spacing-12;
+    position: relative;
+  }
+
+  &-card-image {
+    width: 100%;
+    height: 100%;
+  }
+
+  &-card-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, @primary-light, @primary);
+  }
+
+  &-card-placeholder-icon {
+    font-size: 56rpx;
+    margin-bottom: @spacing-8;
+  }
+
+  &-card-placeholder-name {
+    font-size: @font-sm;
+    color: @text-2;
+  }
+
+  &-card-badge {
+    position: absolute;
+    top: @spacing-8;
+    left: @spacing-8;
+    background: linear-gradient(135deg, @danger, @warning);
+    border-radius: @radius-sm;
+    padding: 2rpx @spacing-8;
+  }
+
+  &-card-badge-text {
+    font-size: @font-xs;
+    color: #fff;
+    font-weight: 500;
+  }
+
+  &-card-info {
+    display: flex;
+    align-items: center;
+    gap: @spacing-8;
+    margin-bottom: @spacing-12;
+  }
+
+  &-card-name {
+    font-size: @font-md;
+    font-weight: 500;
+    color: @text-1;
+    flex: 1;
+    .text-ellipsis(1);
+  }
+
+  &-card-tag {
+    background: @primary-light;
+    border-radius: @radius-sm;
+    padding: 2rpx @spacing-8;
+  }
+
+  &-card-tag-text {
+    font-size: @font-xs;
+    color: @primary-dark;
+  }
+
+  // ===== 操作按钮 =====
+  &-card-actions {
+    display: flex;
+    gap: @spacing-8;
+  }
+
+  &-card-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 56rpx;
+    border-radius: @radius-pill;
+    font-size: @font-xs;
+    font-weight: 500;
+
+    &--primary {
+      background: linear-gradient(135deg, @primary, @primary-dark);
+      color: #fff;
+    }
+
+    &--secondary {
+      background: @primary-light;
+      color: @primary-dark;
+      border: 2rpx solid @primary;
+    }
+  }
+
+  &-card-btn-text {
+    line-height: 1;
+  }
+}

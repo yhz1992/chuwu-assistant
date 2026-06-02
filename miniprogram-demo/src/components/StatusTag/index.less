@@ -1,0 +1,67 @@
+@import '../../styles/variables.less';
+@import '../../styles/mixins.less';
+
+.status-tag {
+  .status-tag();
+
+  &-text {
+    font-size: @font-sm;
+    line-height: 1;
+  }
+
+  &--small {
+    height: 28rpx;
+    padding: 0 8rpx;
+    .status-tag-text {
+      font-size: @font-xs;
+    }
+  }
+
+  // 收藏品状态
+  &--arrived {
+    background: @status-arrived-bg;
+    color: @status-arrived-text;
+  }
+  &--preorder {
+    background: @status-preorder-bg;
+    color: @status-preorder-text;
+  }
+  &--pending-payment {
+    background: @status-pending-payment-bg;
+    color: @status-pending-payment-text;
+  }
+  &--pending-shipment {
+    background: @status-pending-shipment-bg;
+    color: @status-pending-shipment-text;
+  }
+  &--pending-receipt {
+    background: @status-pending-receipt-bg;
+    color: @status-pending-receipt-text;
+  }
+  &--for-sale {
+    background: @status-for-sale-bg;
+    color: @status-for-sale-text;
+  }
+  &--sold {
+    background: @status-sold-bg;
+    color: @status-sold-text;
+  }
+  &--not-for-sale {
+    background: @status-not-for-sale-bg;
+    color: @status-not-for-sale-text;
+  }
+
+  // 出物清单状态
+  &--sale-draft {
+    background: @status-sale-draft-bg;
+    color: @status-sale-draft-text;
+  }
+  &--sale-generated {
+    background: @status-sale-generated-bg;
+    color: @status-sale-generated-text;
+  }
+  &--sale-shared {
+    background: @status-sale-shared-bg;
+    color: @status-sale-shared-text;
+  }
+}

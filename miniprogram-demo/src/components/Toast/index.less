@@ -1,0 +1,56 @@
+@import '../../styles/variables.less';
+
+.toast-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.toast {
+  max-width: 60%;
+  padding: @spacing-16 @spacing-32;
+  border-radius: @radius-md;
+  background: rgba(0, 0, 0, 0.75);
+  animation: toast-in 0.3s ease;
+
+  &-text {
+    font-size: @font-sm;
+    color: #ffffff;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  &--success {
+    background: rgba(76, 175, 142, 0.9);
+  }
+
+  &--error {
+    background: rgba(255, 107, 107, 0.9);
+  }
+
+  &--warning {
+    background: rgba(255, 181, 71, 0.9);
+  }
+
+  &--info {
+    background: rgba(0, 0, 0, 0.75);
+  }
+}
+
+@keyframes toast-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

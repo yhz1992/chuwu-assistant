@@ -1,0 +1,34 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+*.iws
+*.iml
+*.ipr
+.vscode/
+*.swp
+*.swo
+
+# Java / Maven
+java-demo/target/
+java-demo/.mvn/wrapper/maven-wrapper.jar
+
+# Node / Taro
+node_modules/
+dist/
+.taro_cache/
+$TMPDIR/
+
+# Uploads
+uploads/
+
+# Environment & Secrets
+.env
+.env.local
+*.log
+
+# H2 Database
+*.mv.db
+*.trace.db

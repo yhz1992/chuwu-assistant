@@ -1,0 +1,166 @@
+@import '../../styles/variables.less';
+@import '../../styles/mixins.less';
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: @spacing-48 @spacing-32;
+  background: linear-gradient(180deg, @card 0%, @bg 100%);
+
+  &-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80rpx;
+    margin-bottom: @spacing-48;
+  }
+
+  &-brand {
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 50%;
+    background: @primary-light;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: @spacing-32;
+    box-shadow: 0 8rpx 32rpx rgba(79, 110, 247, 0.12);
+  }
+
+  &-title {
+    font-size: 44rpx;
+    font-weight: 700;
+    color: @text-1;
+    margin-bottom: @spacing-12;
+  }
+
+  &-subtitle {
+    font-size: @font-md;
+    color: @text-3;
+  }
+
+  // 卖点卡片
+  &-features {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: @spacing-16;
+    margin-bottom: @spacing-48;
+  }
+
+  &-feature-card {
+    .card();
+    display: flex;
+    align-items: center;
+    gap: @spacing-20;
+    padding: @spacing-24;
+
+    &-icon-wrap {
+      width: 72rpx;
+      height: 72rpx;
+      border-radius: @radius-md;
+      background: @primary-light;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    &-content {
+      flex: 1;
+    }
+
+    &-title {
+      font-size: @font-md;
+      font-weight: 600;
+      color: @text-1;
+      margin-bottom: @spacing-4;
+    }
+
+    &-desc {
+      font-size: @font-sm;
+      color: @text-3;
+      line-height: 1.4;
+    }
+  }
+
+  // 底部操作
+  &-footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: @spacing-24;
+    margin-top: auto;
+    padding-bottom: @spacing-48;
+  }
+
+  // 协议勾选
+  &-agreement {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4rpx;
+
+    &-checkbox {
+      width: 36rpx;
+      height: 36rpx;
+      border-radius: 50%;
+      border: 2rpx solid @border;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: @spacing-8;
+      transition: all 0.2s ease;
+
+      &.checked {
+        background: @primary;
+        border-color: @primary;
+      }
+    }
+
+    &-text {
+      font-size: 22rpx;
+      color: @text-3;
+    }
+
+    &-link {
+      font-size: 22rpx;
+      color: @primary;
+    }
+  }
+
+  &-btn-primary {
+    .btn-base();
+    width: 100%;
+    height: 96rpx;
+    background: @primary;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 8rpx 24rpx rgba(79, 110, 247, 0.25);
+
+    &[disabled] {
+      opacity: 0.6;
+    }
+
+    &::after {
+      border: none;
+    }
+  }
+
+  &-browse {
+    padding: @spacing-16 0;
+
+    &-text {
+      font-size: @font-sm;
+      color: @text-3;
+    }
+
+    &:active {
+      opacity: 0.7;
+    }
+  }
+}

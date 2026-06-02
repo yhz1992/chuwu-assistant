@@ -1,0 +1,26 @@
+# 测试环境配置
+spring:
+  autoconfigure:
+    exclude:
+      - org.redisson.spring.starter.RedissonAutoConfigurationV2
+      - org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
+      - org.springframework.boot.autoconfigure.data.redis.RedisRepositoriesAutoConfiguration
+
+# JWT 配置（测试用）
+jwt:
+  secret: test_secret_key_for_testing_only_2024
+  access-expire: 3600
+  refresh-expire: 86400
+
+# 微信小程序配置（测试用模拟模式）
+wechat:
+  appid: test_app_id
+  secret: test_secret
+  dev-mode: true
+
+# 对象存储配置
+oss:
+  endpoint:
+  access-key:
+  secret-key:
+  bucket:

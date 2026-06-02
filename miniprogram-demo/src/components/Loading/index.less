@@ -1,0 +1,36 @@
+@import '../../styles/variables.less';
+@import '../../styles/mixins.less';
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: @spacing-48;
+  .fade-up();
+
+  &-spinner {
+    width: 56rpx;
+    height: 56rpx;
+    border: 4rpx solid @divider;
+    border-top-color: @primary;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    margin-bottom: @spacing-20;
+    box-shadow: 0 2rpx 8rpx rgba(79, 110, 247, 0.15);
+  }
+
+  &-text {
+    font-size: @font-sm;
+    color: @text-3;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

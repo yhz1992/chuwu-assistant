@@ -1,0 +1,323 @@
+@import '../../styles/variables.less';
+@import '../../styles/mixins.less';
+
+.edit-sale-info {
+  height: 100vh;
+  overflow: hidden;
+  background: @bg;
+
+  &-scroll {
+    height: 100%;
+    padding: 0 @spacing-24 @spacing-48;
+  }
+
+  // 区块
+  &-section {
+    margin-top: @spacing-24;
+    background: @card;
+    border-radius: @radius-lg;
+    padding: @spacing-24;
+    box-shadow: @shadow-sm;
+
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: @spacing-16;
+    }
+
+    &-title {
+      font-size: @font-lg;
+      font-weight: 600;
+      color: @text-1;
+      margin-bottom: @spacing-16;
+      display: block;
+    }
+  }
+
+  // 字段
+  &-field {
+    margin-bottom: @spacing-20;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &-label {
+    display: block;
+    font-size: @font-sm;
+    color: @text-2;
+    margin-bottom: @spacing-8;
+    flex-shrink: 0;
+  }
+
+  &-input {
+    width: 100%;
+    height: 72rpx;
+    background: #f5f5f5;
+    border-radius: @radius-md;
+    padding: 0 @spacing-16;
+    font-size: @font-md;
+    color: @text-1;
+    box-sizing: border-box;
+  }
+
+  &-textarea {
+    width: 100%;
+    min-height: 120rpx;
+    background: #f5f5f5;
+    border-radius: @radius-md;
+    padding: @spacing-16;
+    font-size: @font-md;
+    color: @text-1;
+    box-sizing: border-box;
+    line-height: 1.5;
+  }
+
+  // 批量设置行
+  &-batch-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: @spacing-16;
+    gap: @spacing-16;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &-batch-label {
+    font-size: @font-sm;
+    color: @text-2;
+    width: 80rpx;
+    flex-shrink: 0;
+  }
+
+  &-batch-actions {
+    flex: 1;
+    display: flex;
+    gap: @spacing-12;
+    align-items: center;
+  }
+
+  &-batch-btn {
+    padding: @spacing-8 @spacing-16;
+    background: #f5f5f5;
+    border-radius: @radius-pill;
+    font-size: @font-sm;
+    color: @text-2;
+
+    &--active {
+      background: @primary-light;
+      color: @primary-dark;
+      font-weight: 500;
+    }
+  }
+
+  &-batch-input {
+    flex: 1;
+    height: 64rpx;
+    background: #f5f5f5;
+    border-radius: @radius-md;
+    padding: 0 @spacing-16;
+    font-size: @font-sm;
+    color: @text-1;
+  }
+
+  &-batch-confirm {
+    padding: @spacing-8 @spacing-16;
+    background: @primary-light;
+    border-radius: @radius-pill;
+    font-size: @font-sm;
+    color: @primary-dark;
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+
+  // 总价
+  &-total {
+    font-size: @font-sm;
+    color: @text-2;
+
+    &-price {
+      font-size: @font-lg;
+      font-weight: 700;
+      color: @danger;
+    }
+  }
+
+  // 商品卡片
+  &-item {
+    background: #fafafa;
+    border-radius: @radius-md;
+    padding: @spacing-16;
+    margin-bottom: @spacing-16;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &-header {
+      display: flex;
+      align-items: center;
+      gap: @spacing-8;
+      margin-bottom: @spacing-12;
+    }
+
+    &-index {
+      font-size: @font-sm;
+      color: @text-3;
+      font-weight: 600;
+      width: 36rpx;
+    }
+
+    &-name {
+      font-size: @font-md;
+      font-weight: 600;
+      color: @text-1;
+      flex: 1;
+      .text-ellipsis(1);
+    }
+
+    &-fields {
+      display: flex;
+      flex-direction: column;
+      gap: @spacing-12;
+    }
+
+    &-row {
+      display: flex;
+      align-items: center;
+      gap: @spacing-12;
+    }
+
+    &-label {
+      font-size: @font-sm;
+      color: @text-3;
+      width: 100rpx;
+      flex-shrink: 0;
+
+      &--second {
+        margin-left: @spacing-16;
+      }
+    }
+
+    &-input-wrap {
+      flex: 1;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    &-currency {
+      position: absolute;
+      left: @spacing-12;
+      font-size: @font-sm;
+      color: @text-3;
+      z-index: 1;
+    }
+
+    &-input {
+      flex: 1;
+      height: 64rpx;
+      background: #ffffff;
+      border: 2rpx solid @border;
+      border-radius: @radius-md;
+      padding: 0 @spacing-16;
+      font-size: @font-sm;
+      color: @text-1;
+      box-sizing: border-box;
+    }
+
+    &-input-sm {
+      width: 120rpx;
+      height: 64rpx;
+      background: #ffffff;
+      border: 2rpx solid @border;
+      border-radius: @radius-md;
+      padding: 0 @spacing-16;
+      font-size: @font-sm;
+      color: @text-1;
+      text-align: center;
+    }
+
+    &-tag {
+      padding: @spacing-4 @spacing-16;
+      background: #f5f5f5;
+      border-radius: @radius-pill;
+      font-size: @font-sm;
+      color: @text-3;
+
+      &--active {
+        background: @primary-light;
+        color: @primary-dark;
+        font-weight: 500;
+      }
+    }
+  }
+
+  // 标签组
+  &-tag-group {
+    display: flex;
+    gap: @spacing-12;
+    flex-wrap: wrap;
+  }
+
+  &-tag {
+    padding: @spacing-8 @spacing-20;
+    background: #f5f5f5;
+    border-radius: @radius-pill;
+    font-size: @font-sm;
+    color: @text-2;
+
+    &--active {
+      background: @primary-light;
+      color: @primary-dark;
+      font-weight: 500;
+    }
+  }
+
+  // 底部操作按钮
+  &-actions {
+    display: flex;
+    gap: @spacing-16;
+    margin-top: @spacing-32;
+    padding-bottom: @spacing-48;
+  }
+
+  &-action-btn {
+    flex: 1;
+    height: 88rpx;
+    border-radius: @radius-pill;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:active {
+      opacity: 0.85;
+    }
+
+    &--primary {
+      background: linear-gradient(135deg, @primary, @primary-dark);
+    }
+
+    &--secondary {
+      background: @primary-light;
+      border: 2rpx solid @primary;
+    }
+
+    &-text {
+      font-size: @font-md;
+      font-weight: 500;
+    }
+
+    &--primary &-text {
+      color: #ffffff;
+    }
+
+    &--secondary &-text {
+      color: @primary-dark;
+    }
+  }
+}

@@ -1,0 +1,233 @@
+@import '../../styles/variables.less';
+@import '../../styles/mixins.less';
+
+.wishlist {
+  min-height: 100vh;
+  background: @bg;
+  padding-bottom: @spacing-24;
+
+  &-search-bar {
+    .search-bar();
+  }
+
+  &-search-input-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background: @bg;
+    border-radius: @radius-lg;
+    padding: 0 @spacing-16;
+    height: 72rpx;
+    gap: @spacing-8;
+  }
+
+  &-search-input {
+    flex: 1;
+    height: 72rpx;
+    font-size: @font-md;
+    color: @text-1;
+  }
+
+  &-search-clear {
+    padding: @spacing-8;
+    display: flex;
+    align-items: center;
+  }
+
+  &-search-add {
+    width: 72rpx;
+    height: 72rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: @primary;
+    border-radius: @radius-lg;
+    box-shadow: 0 4rpx 12rpx rgba(79, 110, 247, 0.3);
+  }
+
+  &-filter-bar {
+    padding: 0 @spacing-24 @spacing-16;
+  }
+
+  &-filter-tabs {
+    display: flex;
+    white-space: nowrap;
+  }
+
+  &-filter-tab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 60rpx;
+    padding: 0 @spacing-24;
+    margin-right: @spacing-16;
+    border-radius: @radius-pill;
+    background: @card;
+
+    &--active {
+      background: @primary;
+    }
+  }
+
+  &-filter-tab-text {
+    font-size: @font-sm;
+    color: @text-2;
+
+    &--active {
+      color: #fff;
+      font-weight: 500;
+    }
+  }
+
+  &-list {
+    padding: 0 @spacing-24;
+  }
+
+  &-loading,
+  &-loading-more,
+  &-no-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: @spacing-32;
+    font-size: @font-sm;
+    color: @text-3;
+  }
+
+  // 心愿卡片
+  &-card {
+    .card();
+    display: flex;
+    align-items: flex-start;
+    padding: @spacing-20;
+    margin-bottom: @spacing-12;
+    gap: @spacing-16;
+
+    &:active { opacity: 0.85; }
+  }
+
+  &-card-image-wrap {
+    width: 140rpx;
+    height: 140rpx;
+    border-radius: @radius-md;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  &-card-image {
+    width: 100%;
+    height: 100%;
+  }
+
+  &-card-image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: @divider;
+  }
+
+  &-card-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &-card-header {
+    display: flex;
+    align-items: center;
+    gap: @spacing-8;
+    margin-bottom: @spacing-4;
+  }
+
+  &-card-name {
+    font-size: @font-lg;
+    font-weight: 500;
+    color: @text-1;
+    flex: 1;
+    .text-ellipsis(1);
+  }
+
+  &-card-status {
+    .status-tag();
+    flex-shrink: 0;
+
+    &--wish {
+      background: @status-preorder-bg;
+      color: @status-preorder-text;
+    }
+    &--bought {
+      background: @status-arrived-bg;
+      color: @status-arrived-text;
+    }
+    &--postponed {
+      background: @status-sold-bg;
+      color: @status-sold-text;
+    }
+  }
+
+  &-card-status-text {
+    font-size: @font-xs;
+    line-height: 1;
+  }
+
+  &-card-subtitle {
+    font-size: @font-sm;
+    color: @text-3;
+    margin-bottom: @spacing-8;
+    .text-ellipsis(1);
+  }
+
+  &-card-footer {
+    display: flex;
+    align-items: center;
+    gap: @spacing-12;
+    margin-bottom: @spacing-4;
+  }
+
+  &-card-price {
+    font-size: @font-sm;
+    color: @danger;
+    font-weight: 500;
+  }
+
+  &-card-priority {
+    .status-tag();
+    height: 32rpx;
+    padding: 0 @spacing-8;
+    font-size: @font-xs;
+
+    &.priority-normal {
+      background: @primary-light;
+      color: @primary;
+    }
+    &.priority-high {
+      background: @warning;
+      color: #fff;
+    }
+    &.priority-must {
+      background: @danger;
+      color: #fff;
+    }
+  }
+
+  &-card-priority-text {
+    font-size: @font-xs;
+    line-height: 1;
+  }
+
+  &-card-notes {
+    font-size: @font-xs;
+    color: @text-3;
+    .text-ellipsis(1);
+  }
+
+  &-card-more {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40rpx;
+    height: 140rpx;
+  }
+}

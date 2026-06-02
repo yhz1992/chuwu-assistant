@@ -1,0 +1,100 @@
+@import '../../styles/variables.less';
+@import '../../styles/mixins.less';
+
+.select-items {
+  padding: 0 @spacing-24;
+  padding-bottom: 120rpx;
+
+  // 搜索框
+  &-search {
+    display: flex;
+    align-items: center;
+    gap: @spacing-16;
+    padding: @spacing-24 0;
+  }
+
+  &-search-input {
+    flex: 1;
+    height: 72rpx;
+    background: #f5f5f5;
+    border-radius: @radius-pill;
+    padding: 0 @spacing-24;
+    font-size: @font-md;
+    color: @text-1;
+  }
+
+  &-search-btn {
+    font-size: @font-md;
+    color: @primary-dark;
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+
+  // 收藏列表
+  &-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: @spacing-16;
+    padding-bottom: @spacing-24;
+  }
+
+  &-card-wrap {
+    &:active {
+      opacity: 0.85;
+    }
+  }
+
+  // 加载更多
+  &-loadmore {
+    display: flex;
+    justify-content: center;
+    padding: @spacing-16 0;
+
+    &-text {
+      font-size: @font-sm;
+      color: @text-3;
+    }
+  }
+
+  // 底部固定栏
+  &-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: @card;
+    box-shadow: 0 -4rpx 16rpx rgba(0, 0, 0, 0.08);
+    padding: @spacing-16 @spacing-24;
+    padding-bottom: calc(@spacing-16 + env(safe-area-inset-bottom, 0px));
+    z-index: 100;
+
+    &-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &-count {
+      font-size: @font-md;
+      color: @text-2;
+    }
+
+    &-num {
+      font-size: @font-lg;
+      font-weight: 700;
+      color: @primary-dark;
+    }
+
+    &-btn {
+      .btn-primary();
+      width: 240rpx;
+      height: 76rpx;
+      font-size: @font-md;
+    }
+
+    &-btn-text {
+      color: #ffffff;
+      font-weight: 500;
+    }
+  }
+}
