@@ -12,16 +12,18 @@
     align-items: center;
     min-height: 300rpx;
     font-size: @font-md;
-    color: @text-3;
+    color: @text-secondary;
+    font-weight: @weight-bold;
   }
 
   // ===== 分类标签 =====
   &-tabs {
     padding: @spacing-16 @spacing-24;
-    background: @card;
+    background: @white;
     position: sticky;
     top: 0;
     z-index: 10;
+    border-bottom: 4rpx solid @black;
   }
 
   &-tabs-scroll {
@@ -37,22 +39,23 @@
     padding: 0 @spacing-24;
     margin-right: @spacing-16;
     border-radius: @radius-pill;
-    background: @bg;
-    border: 2rpx solid @border;
+    background: @white;
+    border: 2rpx solid @black;
 
     &--active {
-      background: linear-gradient(135deg, @primary, @primary-dark);
-      border-color: transparent;
+      background: @peach;
+      border-color: @peach;
     }
   }
 
   &-tab-text {
     font-size: @font-sm;
-    color: @text-2;
+    color: @text-primary;
+    font-weight: @weight-bold;
 
     &--active {
-      color: #fff;
-      font-weight: 500;
+      color: @black;
+      font-weight: @weight-extrabold;
     }
   }
 
@@ -66,9 +69,12 @@
 
   // ===== 模板卡片 =====
   &-card {
-    .card();
+    background: @white;
     padding: @spacing-16;
     overflow: hidden;
+    border-radius: @radius-card;
+    border: 4rpx solid @black;
+    box-shadow: @shadow-bold;
   }
 
   &-card-preview {
@@ -78,6 +84,7 @@
     overflow: hidden;
     margin-bottom: @spacing-12;
     position: relative;
+    border: 2rpx solid @black;
   }
 
   &-card-image {
@@ -92,7 +99,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, @primary-light, @primary);
+    background: @lavender;
   }
 
   &-card-placeholder-icon {
@@ -102,22 +109,23 @@
 
   &-card-placeholder-name {
     font-size: @font-sm;
-    color: @text-2;
+    color: @text-secondary;
+    font-weight: @weight-bold;
   }
 
   &-card-badge {
     position: absolute;
     top: @spacing-8;
     left: @spacing-8;
-    background: linear-gradient(135deg, @danger, @warning);
+    background: @black;
     border-radius: @radius-sm;
     padding: 2rpx @spacing-8;
   }
 
   &-card-badge-text {
     font-size: @font-xs;
-    color: #fff;
-    font-weight: 500;
+    color: @white;
+    font-weight: @weight-extrabold;
   }
 
   &-card-info {
@@ -129,21 +137,23 @@
 
   &-card-name {
     font-size: @font-md;
-    font-weight: 500;
-    color: @text-1;
+    font-weight: @weight-extrabold;
+    color: @text-primary;
     flex: 1;
     .text-ellipsis(1);
   }
 
   &-card-tag {
-    background: @primary-light;
+    background: @lavender;
     border-radius: @radius-sm;
     padding: 2rpx @spacing-8;
+    border: 2rpx solid @black;
   }
 
   &-card-tag-text {
     font-size: @font-xs;
-    color: @primary-dark;
+    color: @black;
+    font-weight: @weight-bold;
   }
 
   // ===== 操作按钮 =====
@@ -158,19 +168,20 @@
     align-items: center;
     justify-content: center;
     height: 56rpx;
-    border-radius: @radius-pill;
+    border-radius: @radius-btn;
     font-size: @font-xs;
-    font-weight: 500;
+    font-weight: @weight-extrabold;
+    border: 4rpx solid @black;
+    .neo-interactive();
 
     &--primary {
-      background: linear-gradient(135deg, @primary, @primary-dark);
-      color: #fff;
+      background: @black;
+      color: @white;
     }
 
     &--secondary {
-      background: @primary-light;
-      color: @primary-dark;
-      border: 2rpx solid @primary;
+      background: @white;
+      color: @black;
     }
   }
 

@@ -151,7 +151,7 @@ export default function Mine() {
           >
             <View className='mine-menu-item-left'>
               <View className='mine-menu-item-icon-wrap'>
-                <Icon name={item.icon} size={36} color='#4F6EF7' />
+                <Icon name={item.icon} size={36} color='#000000' />
               </View>
               <Text className='mine-menu-item-label'>{item.label}</Text>
             </View>

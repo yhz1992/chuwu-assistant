@@ -545,7 +545,7 @@ export default function Collections() {
             className={`collections-filter-action${showAdvancedFilter ? ' collections-filter-action--active' : ''}`}
             onClick={() => setShowAdvancedFilter(!showAdvancedFilter)}
           >
-            <Icon name='filter' size={24} color={showAdvancedFilter ? '#4F6EF7' : '#666'} />
+            <Icon name='filter' size={24} color={showAdvancedFilter ? '#000000' : '#666666'} />
             <Text className='collections-filter-action-text'>筛选</Text>
           </View>
         </View>

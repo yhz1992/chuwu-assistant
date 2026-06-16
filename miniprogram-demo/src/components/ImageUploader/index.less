@@ -11,9 +11,10 @@
     position: relative;
     width: 160rpx;
     height: 160rpx;
-    border-radius: @radius-sm;
+    border-radius: @radius-md;
     overflow: hidden;
     flex-shrink: 0;
+    border: 4rpx solid @black;
   }
 
   &-image {
@@ -26,9 +27,10 @@
     top: 0;
     left: 0;
     padding: 4rpx 12rpx;
-    background: @primary-dark;
-    color: #fff;
+    background: @black;
+    color: @white;
     font-size: @font-xs;
+    font-weight: @weight-bold;
     line-height: 1.4;
     border-radius: 0 0 @radius-sm 0;
     z-index: 1;
@@ -38,18 +40,20 @@
     position: absolute;
     top: -8rpx;
     right: -8rpx;
-    width: 36rpx;
-    height: 36rpx;
+    width: 40rpx;
+    height: 40rpx;
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.5);
+    background: @black;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 2;
+    border: 4rpx solid @white;
+    box-shadow: @shadow-bold-sm;
   }
 
   &-delete-icon {
-    color: #fff;
+    color: @white;
     font-size: 28rpx;
     line-height: 1;
   }
@@ -57,15 +61,19 @@
   &-upload-btn {
     width: 160rpx;
     height: 160rpx;
-    border: 2rpx dashed @border;
-    border-radius: @radius-sm;
+    border: 4rpx dashed @black;
+    border-radius: @radius-md;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: @bg;
+    background: @white;
     flex-shrink: 0;
     box-sizing: border-box;
+
+    &:active {
+      background: @lavender;
+    }
 
     &--disabled {
       opacity: 0.5;
@@ -74,18 +82,20 @@
 
   &-plus {
     font-size: 48rpx;
-    color: @text-3;
+    color: @black;
     line-height: 1;
     margin-bottom: @spacing-4;
+    font-weight: @weight-black;
   }
 
   &-hint {
     font-size: @font-xs;
-    color: @text-3;
+    color: @text-secondary;
+    font-weight: @weight-bold;
   }
 
   &-loading {
     font-size: @font-lg;
-    color: @text-3;
+    color: @text-secondary;
   }
 }

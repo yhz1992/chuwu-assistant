@@ -14,16 +14,18 @@
     justify-content: center;
     min-height: 400rpx;
     font-size: @font-md;
-    color: @text-3;
+    color: @text-secondary;
+    font-weight: @weight-bold;
     gap: @spacing-16;
   }
 
   &-retry {
     padding: @spacing-8 @spacing-24;
     border-radius: @radius-pill;
-    border: 1rpx solid @primary;
-    color: @primary;
+    border: 4rpx solid @black;
+    color: @black;
     font-size: @font-sm;
+    font-weight: @weight-extrabold;
   }
 
   &-content { flex: 1; }
@@ -31,7 +33,7 @@
   &-swiper-wrap {
     position: relative;
     width: 100%;
-    background: #1A1A1A;
+    background: @black;
   }
 
   &-swiper {
@@ -55,11 +57,12 @@
     right: @spacing-24;
     bottom: @spacing-16;
     padding: 4rpx @spacing-16;
-    background: rgba(0, 0, 0, 0.5);
+    background: @black;
     border-radius: @radius-pill;
-    color: #fff;
+    color: @white;
     font-size: @font-xs;
-    backdrop-filter: blur(8rpx);
+    font-weight: @weight-bold;
+    border: 2rpx solid @white;
   }
 
   &-swiper-placeholder {
@@ -69,21 +72,23 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: @card;
+    background: @white;
     gap: @spacing-12;
 
     &-text {
       font-size: @font-sm;
-      color: @text-3;
+      color: @text-secondary;
+      font-weight: @weight-bold;
     }
   }
 
   &-card {
     margin: @spacing-16 @spacing-24;
     padding: @spacing-24;
-    background: @card;
-    border-radius: @radius-lg;
-    box-shadow: @shadow-sm;
+    background: @white;
+    border-radius: @radius-card;
+    border: 4rpx solid @black;
+    box-shadow: @shadow-bold;
   }
 
   &-card-header {
@@ -92,24 +97,24 @@
     justify-content: space-between;
     margin-bottom: @spacing-16;
     padding-bottom: @spacing-16;
-    border-bottom: 1rpx solid @divider;
+    border-bottom: 2rpx solid @black;
   }
 
   &-card-title {
     display: block;
     font-size: @font-md;
-    font-weight: 600;
-    color: @primary;
+    font-weight: @weight-extrabold;
+    color: @black;
     margin-bottom: @spacing-16;
     padding-bottom: @spacing-12;
-    border-bottom: 1rpx solid @divider;
+    border-bottom: 2rpx solid @black;
   }
 
   &-name {
     flex: 1;
     font-size: @font-lg;
-    font-weight: 600;
-    color: @text-1;
+    font-weight: @weight-extrabold;
+    color: @text-primary;
     margin-right: @spacing-16;
     .text-ellipsis(1);
   }
@@ -136,19 +141,21 @@
   &-info-label {
     width: 120rpx;
     font-size: @font-sm;
-    color: @text-3;
+    color: @text-secondary;
     flex-shrink: 0;
     line-height: 1.8;
+    font-weight: @weight-bold;
   }
 
   &-info-value {
     flex: 1;
     font-size: @font-sm;
-    color: @text-1;
+    color: @text-primary;
     line-height: 1.8;
     word-break: break-all;
+    font-weight: @weight-medium;
 
-    &--price { color: @danger; font-weight: 600; }
+    &--price { color: @danger; font-weight: @weight-extrabold; }
   }
 
   &-spacer { height: 140rpx; }
@@ -161,8 +168,8 @@
     display: flex;
     padding: @spacing-16 @spacing-24;
     padding-bottom: calc(@spacing-16 + env(safe-area-inset-bottom));
-    background: @card;
-    box-shadow: 0 -4rpx 16rpx rgba(0, 0, 0, 0.06);
+    background: @white;
+    border-top: 4rpx solid @black;
     gap: @spacing-12;
     z-index: 10;
   }
@@ -174,29 +181,31 @@
     align-items: center;
     justify-content: center;
     gap: @spacing-8;
-    border-radius: @radius-lg;
-    border: 1rpx solid @border;
-    background: @card;
+    border-radius: @radius-btn;
+    border: 4rpx solid @black;
+    background: @white;
+    font-weight: @weight-extrabold;
+    .neo-interactive();
 
     &--primary {
       flex: 2;
-      background: @primary;
-      border-color: transparent;
-      .collection-detail-actions-btn-text { color: #fff; }
+      background: @black;
+      border-color: @black;
+      .collection-detail-actions-btn-text { color: @white; }
     }
 
     &--success {
-      background: @success;
-      border-color: transparent;
-      .collection-detail-actions-btn-text { color: #fff; }
+      background: @mint;
+      border-color: @black;
+      .collection-detail-actions-btn-text { color: @black; }
     }
 
-    &:last-child { flex: 0 0 72rpx; border-radius: @radius-lg; }
+    &:last-child { flex: 0 0 72rpx; border-radius: @radius-btn; }
 
     &-text {
       font-size: @font-sm;
-      color: @text-2;
-      font-weight: 500;
+      color: @black;
+      font-weight: @weight-extrabold;
     }
   }
 }

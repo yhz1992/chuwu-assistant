@@ -7,10 +7,8 @@
   justify-content: space-between;
   height: 88rpx;
   padding: 0 @spacing-24;
-  background: rgba(255, 255, 255, 0.82);
-  backdrop-filter: blur(20rpx);
-  -webkit-backdrop-filter: blur(20rpx);
-  border-bottom: 1rpx solid rgba(0, 0, 0, 0.06);
+  background: @white;
+  border-bottom: 4rpx solid @black;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -24,15 +22,23 @@
   &-back-btn {
     .icon-btn(60rpx);
     background: transparent;
+    border: none;
     box-shadow: none;
+
+    &:active {
+      transform: none;
+      box-shadow: none;
+      opacity: 0.6;
+    }
   }
 
   &-title {
     flex: 1;
     text-align: center;
     font-size: @font-lg;
-    font-weight: 600;
-    color: @text-1;
+    font-weight: @weight-extrabold;
+    color: @text-primary;
+    letter-spacing: -0.5rpx;
     .text-ellipsis();
   }
 

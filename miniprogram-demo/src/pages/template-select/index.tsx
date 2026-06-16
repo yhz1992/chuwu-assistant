@@ -113,7 +113,7 @@ export default function TemplateSelect() {
               {/* 预览占位 */}
               <View className='template-select-preview'>
                 <View className='template-select-preview-placeholder'>
-                  <Icon name={template.id === 'simple' ? 'document' : template.id === 'card' ? 'grid' : 'image'} size={48} color='#4F6EF7' />
+                  <Icon name={template.id === 'simple' ? 'document' : template.id === 'card' ? 'grid' : 'image'} size={48} color='#000000' />
                   <Text className='template-select-preview-name'>{template.name}</Text>
                 </View>
                 {isSelected && (

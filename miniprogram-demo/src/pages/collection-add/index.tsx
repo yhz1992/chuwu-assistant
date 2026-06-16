@@ -324,7 +324,7 @@ export default function CollectionAdd() {
             <Text className='collection-add-section-title'>出物信息</Text>
             <View className='collection-add-section-toggle'>
               <Text className='collection-add-section-toggle-text'>{showSaleInfo ? '收起' : '展开'}</Text>
-              <Icon name={showSaleInfo ? 'chevron-down' : 'chevron-right'} size={28} color='#4F6EF7' />
+              <Icon name={showSaleInfo ? 'chevron-down' : 'chevron-right'} size={28} color='#000000' />
             </View>
           </View>
 
@@ -332,7 +332,7 @@ export default function CollectionAdd() {
             <>
               <View className='collection-add-field'>
                 <Text className='collection-add-label'>准备出物</Text>
-                <Switch checked={form.forSale} color='#4F6EF7' onChange={(e) => updateField('forSale', !!e.detail.value)} />
+                <Switch checked={form.forSale} color='#000000' onChange={(e) => updateField('forSale', !!e.detail.value)} />
               </View>
               {form.forSale && (
                 <>
@@ -351,11 +351,11 @@ export default function CollectionAdd() {
                   </View>
                   <View className='collection-add-field'>
                     <Text className='collection-add-label'>包邮</Text>
-                    <Switch checked={form.freeShipping} color='#4F6EF7' onChange={(e) => updateField('freeShipping', !!e.detail.value)} />
+                    <Switch checked={form.freeShipping} color='#000000' onChange={(e) => updateField('freeShipping', !!e.detail.value)} />
                   </View>
                   <View className='collection-add-field'>
                     <Text className='collection-add-label'>可小刀</Text>
-                    <Switch checked={form.negotiable} color='#4F6EF7' onChange={(e) => updateField('negotiable', !!e.detail.value)} />
+                    <Switch checked={form.negotiable} color='#000000' onChange={(e) => updateField('negotiable', !!e.detail.value)} />
                   </View>
                   <View className='collection-add-field'>
                     <Text className='collection-add-label'>捆绑规则</Text>

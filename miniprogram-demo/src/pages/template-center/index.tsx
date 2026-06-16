@@ -132,7 +132,7 @@ export default function TemplateCenter() {
                     />
                   ) : (
                     <View className='template-center-card-placeholder'>
-                      <Icon name='template' size={48} color='#4F6EF7' />
+                      <Icon name='template' size={48} color='#000000' />
                       <Text className='template-center-card-placeholder-name'>
                         {template.name}
                       </Text>

@@ -252,18 +252,18 @@ export default function GenerateResult() {
             className={`generate-result-action-btn${savingImage ? ' generate-result-action-btn--disabled' : ''}`}
             onClick={handleSaveImage}
           >
-            <Icon name='download' size={36} color='#4F6EF7' />
+            <Icon name='download' size={36} color='#000000' />
             <Text className='generate-result-action-label'>保存图片</Text>
           </View>
           <View className='generate-result-action-btn' onClick={handleShare}>
-            <Icon name='share' size={36} color='#4F6EF7' />
+            <Icon name='share' size={36} color='#000000' />
             <Text className='generate-result-action-label'>分享给好友</Text>
           </View>
           <View
             className={`generate-result-action-btn${copying ? ' generate-result-action-btn--disabled' : ''}`}
             onClick={() => handleCopyText(currentText)}
           >
-            <Icon name='copy' size={36} color='#4F6EF7' />
+            <Icon name='copy' size={36} color='#000000' />
             <Text className='generate-result-action-label'>复制文案</Text>
           </View>
         </View>

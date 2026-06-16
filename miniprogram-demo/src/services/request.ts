@@ -134,8 +134,8 @@ const request = async <T>(url: string, options: RequestOptions = {}): Promise<T>
       throw new Error('登录已过期，请重新登录')
     }
 
-    // 业务错误
-    if (code !== 0 && code < 1000) {
+    // 业务错误（所有非零、非 token 相关的错误码）
+    if (code !== 0) {
       throw new Error(res.data.message || '请求失败')
     }
 

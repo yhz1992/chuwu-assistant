@@ -5,63 +5,64 @@
   .status-tag();
 
   &-text {
-    font-size: @font-sm;
+    font-size: @font-xs;
     line-height: 1;
+    font-weight: @weight-bold;
   }
 
   &--small {
     height: 28rpx;
     padding: 0 8rpx;
     .status-tag-text {
-      font-size: @font-xs;
+      font-size: 18rpx;
     }
   }
 
   // 收藏品状态
   &--arrived {
-    background: @status-arrived-bg;
-    color: @status-arrived-text;
+    background: @mint;
+    color: @black;
   }
   &--preorder {
-    background: @status-preorder-bg;
-    color: @status-preorder-text;
+    background: @peach;
+    color: @black;
   }
   &--pending-payment {
-    background: @status-pending-payment-bg;
-    color: @status-pending-payment-text;
+    background: #FFECEB;
+    color: @black;
   }
   &--pending-shipment {
-    background: @status-pending-shipment-bg;
-    color: @status-pending-shipment-text;
+    background: @lavender;
+    color: @black;
   }
   &--pending-receipt {
-    background: @status-pending-receipt-bg;
-    color: @status-pending-receipt-text;
+    background: @lavender;
+    color: @black;
   }
   &--for-sale {
-    background: @status-for-sale-bg;
-    color: @status-for-sale-text;
+    background: @mint;
+    color: @black;
   }
   &--sold {
-    background: @status-sold-bg;
-    color: @status-sold-text;
+    background: #F2F2F2;
+    color: @text-tertiary;
   }
   &--not-for-sale {
-    background: @status-not-for-sale-bg;
-    color: @status-not-for-sale-text;
+    background: #F2F2F2;
+    color: @text-tertiary;
   }
 
   // 出物清单状态
   &--sale-draft {
-    background: @status-sale-draft-bg;
-    color: @status-sale-draft-text;
+    background: #F5F5F5;
+    color: @text-tertiary;
   }
   &--sale-generated {
-    background: @status-sale-generated-bg;
-    color: @status-sale-generated-text;
+    background: @mint;
+    color: @black;
   }
   &--sale-shared {
-    background: @status-sale-shared-bg;
-    color: @status-sale-shared-text;
+    background: @peach;
+    color: @black;
   }
 }

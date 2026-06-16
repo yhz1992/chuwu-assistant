@@ -24,11 +24,12 @@ export default function SelectItems() {
   const fetchList = async (pageNum: number, append = false) => {
     if (!append) setLoading(true)
     try {
-      const res = await collectionApi.getList({
+      const params: any = {
         page: pageNum,
         pageSize: PAGE_SIZE,
-        keyword: keyword || undefined,
-      })
+      }
+      if (keyword) params.keyword = keyword
+      const res = await collectionApi.getList(params)
       const records = Array.isArray(res) ? res : []
       if (pageNum === 1) {
         setList(records)

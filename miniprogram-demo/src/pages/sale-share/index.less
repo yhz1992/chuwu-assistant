@@ -17,15 +17,17 @@
   &-title {
     display: block;
     font-size: @font-xxl;
-    font-weight: 700;
-    color: @text-1;
+    font-weight: @weight-extrabold;
+    color: @text-primary;
     margin-bottom: @spacing-12;
     line-height: 1.3;
+    letter-spacing: -0.5rpx;
   }
 
   &-time {
     font-size: @font-sm;
-    color: @text-3;
+    color: @text-secondary;
+    font-weight: @weight-medium;
   }
 
   // 清单图片
@@ -35,37 +37,39 @@
 
   &-image {
     width: 100%;
-    border-radius: @radius-lg;
-    box-shadow: @shadow-md;
+    border-radius: @radius-card;
+    border: 4rpx solid @black;
+    box-shadow: @shadow-bold;
   }
 
   // 商品列表
   &-items {
-    background: @card;
-    border-radius: @radius-lg;
+    background: @white;
+    border-radius: @radius-card;
     padding: @spacing-24;
-    box-shadow: @shadow-sm;
+    border: 4rpx solid @black;
+    box-shadow: @shadow-bold;
     margin-bottom: @spacing-24;
 
     &-title {
       display: block;
       font-size: @font-md;
-      font-weight: 600;
-      color: @text-1;
+      font-weight: @weight-extrabold;
+      color: @text-primary;
       margin-bottom: @spacing-16;
     }
   }
 
   &-total-price {
     color: @danger;
-    font-weight: 600;
+    font-weight: @weight-extrabold;
   }
 
   &-item {
     display: flex;
     gap: @spacing-16;
     padding: @spacing-16 0;
-    border-bottom: 2rpx solid @divider;
+    border-bottom: 2rpx solid @black;
 
     &:last-child {
       border-bottom: none;
@@ -78,7 +82,8 @@
       flex-shrink: 0;
       border-radius: @radius-md;
       overflow: hidden;
-      background: @bg;
+      background: @lavender;
+      border: 4rpx solid @black;
     }
 
     &-image {
@@ -92,7 +97,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: @primary-light;
+      background: @lavender;
       font-size: 40rpx;
     }
 
@@ -106,17 +111,18 @@
 
     &-name {
       font-size: @font-md;
-      font-weight: 600;
-      color: @text-1;
+      font-weight: @weight-extrabold;
+      color: @text-primary;
       margin-bottom: @spacing-4;
       .text-ellipsis(1);
     }
 
     &-char {
       font-size: @font-sm;
-      color: @text-3;
+      color: @text-secondary;
       margin-bottom: @spacing-8;
       .text-ellipsis(1);
+      font-weight: @weight-medium;
     }
 
     &-footer {
@@ -127,30 +133,34 @@
 
     &-price {
       font-size: @font-md;
-      font-weight: 700;
+      font-weight: @weight-extrabold;
       color: @danger;
     }
 
     &-badge {
       font-size: @font-xs;
-      color: @success;
-      background: #E8F5EE;
+      color: @black;
+      background: @mint;
       padding: @spacing-4 @spacing-12;
       border-radius: @radius-pill;
+      font-weight: @weight-bold;
+      border: 2rpx solid @black;
     }
   }
 
   // 免责声明
   &-disclaimer {
-    background: #FFF8E6;
+    background: @peach;
     border-radius: @radius-md;
     padding: @spacing-16 @spacing-20;
     margin-bottom: @spacing-24;
+    border: 4rpx solid @black;
 
     &-text {
       font-size: @font-sm;
-      color: #B8860B;
+      color: @black;
       line-height: 1.5;
+      font-weight: @weight-bold;
     }
   }
 
@@ -161,20 +171,18 @@
 
   &-btn {
     height: 88rpx;
-    background: linear-gradient(135deg, @primary, @primary-dark);
-    border-radius: @radius-pill;
+    background: @black;
+    border-radius: @radius-btn;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    &:active {
-      opacity: 0.85;
-    }
+    border: 4rpx solid @black;
+    .neo-interactive();
 
     &-text {
       font-size: @font-md;
-      font-weight: 500;
-      color: #ffffff;
+      font-weight: @weight-extrabold;
+      color: @white;
     }
   }
 }

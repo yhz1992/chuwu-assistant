@@ -127,7 +127,7 @@ export default function SaleList() {
           <Text className='sale-list-btn-text'>新建出物清单</Text>
         </View>
         <View className='sale-list-btn sale-list-btn--secondary' onClick={handleFromForSale}>
-          <Icon name='tag' size={36} color='#4F6EF7' />
+          <Icon name='tag' size={36} color='#000000' />
           <Text className='sale-list-btn-text'>从待出物生成</Text>
         </View>
       </View>

@@ -1,3 +1,5 @@
+@import '../../styles/variables.less';
+
 .tab-bar {
   position: fixed;
   bottom: 0;
@@ -6,12 +8,11 @@
   z-index: 999;
   display: flex;
   flex-direction: row;
-  padding-top: 14rpx;
+  padding-top: 16rpx;
   padding-bottom: 8rpx;
   padding-bottom: calc(8rpx + env(safe-area-inset-bottom));
-  background: #FFFFFF;
-  border-top: 1rpx solid #F0F0F0;
-  box-shadow: 0 -4rpx 16rpx rgba(0, 0, 0, 0.06);
+  background: @white;
+  border-top: 6rpx solid @black;
 }
 
 .tab-bar__item {
@@ -29,20 +30,26 @@
   justify-content: center;
   margin-bottom: 6rpx;
   border-radius: 50%;
+  transition: background 0.15s ease;
 
   &.is-active {
-    background: rgba(79, 110, 247, 0.08);
+    // background 由 inline style 动态设置
+    border-radius: @radius-xl;
+    width: 56rpx;
+    height: 56rpx;
   }
 }
 
 .tab-bar__label {
   font-size: 20rpx;
   line-height: 1;
-  color: #999999;
-  font-weight: 400;
+  color: @text-tertiary;
+  font-weight: @weight-bold;
+  text-transform: uppercase;
+  letter-spacing: 2rpx;
 
   &.is-active {
-    color: #4F6EF7;
-    font-weight: 500;
+    // color 由 inline style 动态设置
+    font-weight: @weight-extrabold;
   }
 }

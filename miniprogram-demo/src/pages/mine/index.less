@@ -22,19 +22,10 @@
     height: 128rpx;
     border-radius: 50%;
     overflow: hidden;
-    background: @primary-light;
-    box-shadow: 0 8rpx 24rpx rgba(79, 110, 247, 0.18);
+    background: @mint;
+    border: 4rpx solid @black;
+    box-shadow: @shadow-bold;
     position: relative;
-
-    &::after {
-      content: '';
-      position: absolute;
-      inset: -2rpx;
-      border-radius: 50%;
-      background: @gradient-primary;
-      z-index: -1;
-      opacity: 0.15;
-    }
   }
 
   &-avatar {
@@ -48,19 +39,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: @primary-light;
+    background: @mint;
   }
 
   &-nickname {
     font-size: @font-xl;
-    font-weight: 700;
-    color: @text-1;
+    font-weight: @weight-extrabold;
+    color: @text-primary;
+    letter-spacing: -0.5rpx;
   }
 
   &-uid {
     font-size: @font-sm;
-    color: @text-3;
+    color: @text-secondary;
     margin-top: -8rpx;
+    font-weight: @weight-medium;
   }
 
   // 数据统计卡片
@@ -76,34 +69,35 @@
     flex-direction: column;
     align-items: center;
     padding: @spacing-24 @spacing-8;
-    background: @card;
-    border-radius: @radius-lg;
-    box-shadow: @shadow-sm;
-    transition: transform @transition-fast;
+    border-radius: @radius-card;
+    border: 4rpx solid @black;
+    box-shadow: @shadow-bold;
+    .neo-interactive();
 
-    &:active {
-      transform: scale(0.96);
-    }
-  }
+    &:nth-child(1) { background: #FFF0F5; }   // 收藏总数 - Pink 浅底
+    &:nth-child(2) { background: #E8FFE8; }   // 出物清单 - Mint 浅底
+    &:nth-child(3) { background: #FFF0E8; }   // 心愿数量 - Peach 浅底
+    &:nth-child(4) { background: @lavender; }  // 已出物 - Lavender
 
-  &-stat-value {
-    font-size: @font-xxl;
-    font-weight: 800;
-    color: @primary;
-    margin-bottom: @spacing-4;
+    &:nth-child(1) &-value { color: @pink; }
+    &:nth-child(2) &-value { color: @mint; }
+    &:nth-child(3) &-value { color: @peach; }
+    &:nth-child(4) &-value { color: @black; }
   }
 
   &-stat-label {
     font-size: @font-xs;
-    color: @text-3;
-    font-weight: 500;
+    color: @text-secondary;
+    font-weight: @weight-bold;
+    text-transform: uppercase;
   }
 
   // 功能菜单
   &-menu {
-    background: @card;
-    border-radius: @radius-lg;
-    box-shadow: @shadow-sm;
+    background: @white;
+    border-radius: @radius-card;
+    border: 4rpx solid @black;
+    box-shadow: @shadow-bold;
     overflow: hidden;
     margin-bottom: @spacing-32;
   }
@@ -114,6 +108,7 @@
     justify-content: space-between;
     height: 104rpx;
     padding: 0 @spacing-24;
+    position: relative;
     transition: background @transition-fast;
 
     &::after {
@@ -122,8 +117,8 @@
       bottom: 0;
       left: @spacing-24;
       right: @spacing-24;
-      height: 1rpx;
-      background: @divider;
+      height: 2rpx;
+      background: @black;
     }
 
     &:last-child::after {
@@ -131,7 +126,7 @@
     }
 
     &:active {
-      background: @bg;
+      background: @lavender;
     }
 
     &-left {
@@ -147,12 +142,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      border: 2rpx solid @black;
     }
 
     &-label {
       font-size: @font-md;
-      color: @text-1;
-      font-weight: 500;
+      color: @text-primary;
+      font-weight: @weight-bold;
     }
 
     &-right {
@@ -161,13 +157,20 @@
       gap: @spacing-8;
     }
 
+    &:nth-child(1) &-icon-wrap { background: #FFF0F5; }
+    &:nth-child(2) &-icon-wrap { background: #E8FFE8; }
+    &:nth-child(3) &-icon-wrap { background: #FFF0E8; }
+    &:nth-child(4) &-icon-wrap { background: @lavender; }
+    &:nth-child(5) &-icon-wrap { background: @peach; }
+    &:nth-child(6) &-icon-wrap { background: @lavender; }
+
     &-badge {
       font-size: @font-xs;
-      color: @primary;
-      background: @primary-light;
+      color: @white;
+      background: @pink;
       padding: 4rpx @spacing-12;
       border-radius: @radius-pill;
-      font-weight: 500;
+      font-weight: @weight-bold;
     }
   }
 
@@ -178,7 +181,8 @@
 
     &-text {
       font-size: @font-xs;
-      color: @text-4;
+      color: @text-tertiary;
+      font-weight: @weight-medium;
     }
   }
 }

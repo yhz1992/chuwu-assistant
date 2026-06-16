@@ -12,25 +12,28 @@
 
   // ===== 区块 =====
   &-section {
-    background: @card;
+    background: @white;
     margin: @spacing-16 @spacing-24;
-    border-radius: @radius-lg;
+    border-radius: @radius-card;
     padding: @spacing-24;
+    border: 4rpx solid @black;
+    box-shadow: @shadow-bold;
   }
 
   &-section-title {
     display: block;
     font-size: @font-md;
-    font-weight: 500;
-    color: @text-1;
+    font-weight: @weight-extrabold;
+    color: @text-primary;
     margin-bottom: @spacing-12;
   }
 
   &-section-desc {
     display: block;
     font-size: @font-sm;
-    color: @text-3;
+    color: @text-secondary;
     margin-bottom: @spacing-16;
+    font-weight: @weight-medium;
   }
 
   // ===== Picker =====
@@ -38,14 +41,15 @@
     display: flex;
     align-items: center;
     height: 72rpx;
-    background: @bg;
+    background: @white;
     border-radius: @radius-md;
     padding: 0 @spacing-16;
     font-size: @font-md;
-    color: @text-1;
+    color: @text-primary;
+    border: 2rpx solid @black;
 
     &--empty {
-      color: @text-3;
+      color: @text-tertiary;
     }
   }
 
@@ -53,33 +57,36 @@
   &-textarea {
     width: 100%;
     height: 280rpx;
-    background: @bg;
+    background: @white;
     border-radius: @radius-md;
     padding: @spacing-16;
     font-size: @font-md;
-    color: @text-1;
+    color: @text-primary;
     box-sizing: border-box;
     line-height: 1.5;
+    border: 2rpx solid @black;
   }
 
   &-count {
     display: block;
     text-align: right;
     font-size: @font-xs;
-    color: @text-3;
+    color: @text-secondary;
     margin-top: @spacing-8;
+    font-weight: @weight-bold;
   }
 
   // ===== Input =====
   &-input {
     width: 100%;
     height: 72rpx;
-    background: @bg;
+    background: @white;
     border-radius: @radius-md;
     padding: 0 @spacing-16;
     font-size: @font-md;
-    color: @text-1;
+    color: @text-primary;
     box-sizing: border-box;
+    border: 2rpx solid @black;
   }
 
   // ===== 提交按钮 =====
@@ -93,7 +100,7 @@
     width: 100%;
 
     &--disabled {
-      opacity: 0.5;
+      opacity: @opacity-disabled;
     }
   }
 

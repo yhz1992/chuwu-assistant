@@ -91,7 +91,7 @@ export default function Login() {
       {/* 顶部 Logo 区域 */}
       <View className='login-header'>
         <View className='login-brand'>
-          <Icon name='package' size={80} color='#4F6EF7' />
+          <Icon name='package' size={80} color='#000000' />
         </View>
         <Text className='login-title'>出物小助手</Text>
         <Text className='login-subtitle'>记录收藏，一键生成出物清单</Text>
@@ -101,7 +101,7 @@ export default function Login() {
       <View className='login-features'>
         <View className='login-feature-card'>
           <View className='login-feature-card-icon-wrap'>
-            <Icon name='camera' size={36} color='#4F6EF7' />
+            <Icon name='camera' size={36} color='#000000' />
           </View>
           <View className='login-feature-card-content'>
             <Text className='login-feature-card-title'>快速记录收藏</Text>
@@ -113,7 +113,7 @@ export default function Login() {
 
         <View className='login-feature-card'>
           <View className='login-feature-card-icon-wrap'>
-            <Icon name='template' size={36} color='#4F6EF7' />
+            <Icon name='template' size={36} color='#000000' />
           </View>
           <View className='login-feature-card-content'>
             <Text className='login-feature-card-title'>一键生成出物图</Text>
@@ -125,7 +125,7 @@ export default function Login() {
 
         <View className='login-feature-card'>
           <View className='login-feature-card-icon-wrap'>
-            <Icon name='copy' size={36} color='#4F6EF7' />
+            <Icon name='copy' size={36} color='#000000' />
           </View>
           <View className='login-feature-card-content'>
             <Text className='login-feature-card-title'>多平台文案复制</Text>

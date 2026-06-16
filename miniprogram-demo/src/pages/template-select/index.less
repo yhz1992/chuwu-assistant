@@ -7,9 +7,10 @@
   &-desc {
     display: block;
     font-size: @font-sm;
-    color: @text-3;
+    color: @text-secondary;
     margin-bottom: @spacing-24;
     padding-top: @spacing-16;
+    font-weight: @weight-medium;
   }
 
   // 模板列表
@@ -21,14 +22,17 @@
 
   // 模板卡片
   &-card {
-    .card();
+    background: @white;
     overflow: hidden;
     padding: 0;
-    border: 2rpx solid transparent;
-    transition: border-color 0.2s;
+    border: 4rpx solid @black;
+    border-radius: @radius-card;
+    box-shadow: @shadow-bold;
+    transition: transform @transition-fast, box-shadow @transition-fast;
 
     &--selected {
-      border-color: @primary;
+      border-color: @pink;
+      box-shadow: 4rpx 4rpx 0px 0px @pink;
     }
 
     &--disabled {
@@ -41,10 +45,11 @@
     position: relative;
     width: 100%;
     height: 280rpx;
-    background: #f5f5f5;
+    background: @lavender;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-bottom: 2rpx solid @black;
 
     &-placeholder {
       display: flex;
@@ -59,7 +64,8 @@
 
     &-name {
       font-size: @font-sm;
-      color: @text-3;
+      color: @text-secondary;
+      font-weight: @weight-bold;
     }
   }
 
@@ -71,14 +77,15 @@
     width: 44rpx;
     height: 44rpx;
     border-radius: 50%;
-    background: @primary-dark;
+    background: @black;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 2rpx solid @white;
   }
 
   &-selected-icon {
-    color: #ffffff;
+    color: @white;
     font-size: 28rpx;
     font-weight: bold;
   }
@@ -90,17 +97,20 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.7);
     display: flex;
     align-items: center;
     justify-content: center;
 
     &-text {
       font-size: @font-md;
-      color: @text-3;
-      background: rgba(0, 0, 0, 0.1);
+      color: @text-primary;
+      background: @white;
       padding: @spacing-8 @spacing-24;
       border-radius: @radius-pill;
+      font-weight: @weight-extrabold;
+      border: 4rpx solid @black;
+      box-shadow: @shadow-bold;
     }
   }
 
@@ -112,23 +122,25 @@
   &-card-name {
     display: block;
     font-size: @font-md;
-    font-weight: 600;
-    color: @text-1;
+    font-weight: @weight-extrabold;
+    color: @text-primary;
     margin-bottom: @spacing-8;
   }
 
   &-card-desc {
     display: block;
     font-size: @font-sm;
-    color: @text-2;
+    color: @text-secondary;
     margin-bottom: @spacing-4;
     line-height: 1.4;
+    font-weight: @weight-medium;
   }
 
   &-card-scene {
     display: block;
     font-size: @font-xs;
-    color: @text-3;
+    color: @text-tertiary;
+    font-weight: @weight-bold;
   }
 
   // 底部按钮
@@ -142,22 +154,19 @@
   &-btn {
     flex: 1;
     height: 88rpx;
-    border-radius: @radius-pill;
+    border-radius: @radius-btn;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    &:active {
-      opacity: 0.85;
-    }
+    border: 4rpx solid @black;
+    .neo-interactive();
 
     &--primary {
-      background: linear-gradient(135deg, @primary, @primary-dark);
+      background: @black;
     }
 
     &--secondary {
-      background: @primary-light;
-      border: 2rpx solid @primary;
+      background: @white;
     }
 
     &--loading {
@@ -166,15 +175,15 @@
 
     &-text {
       font-size: @font-md;
-      font-weight: 500;
+      font-weight: @weight-extrabold;
     }
 
     &--primary &-text {
-      color: #ffffff;
+      color: @white;
     }
 
     &--secondary &-text {
-      color: @primary-dark;
+      color: @black;
     }
   }
 }

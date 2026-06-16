@@ -12,7 +12,8 @@
     align-items: center;
     min-height: 300rpx;
     font-size: @font-md;
-    color: @text-3;
+    color: @text-secondary;
+    font-weight: @weight-bold;
   }
 
   // ===== 列表 =====
@@ -24,7 +25,7 @@
 
   // ===== 分享卡片 =====
   &-card {
-    .card();
+    .interactive-card();
     padding: @spacing-20 @spacing-24;
   }
 
@@ -37,22 +38,24 @@
 
   &-card-title {
     font-size: @font-lg;
-    font-weight: 500;
-    color: @text-1;
+    font-weight: @weight-extrabold;
+    color: @text-primary;
     flex: 1;
     .text-ellipsis(1);
     margin-right: @spacing-12;
   }
 
   &-card-status {
-    background: @status-sale-generated-bg;
+    background: @mint;
     border-radius: @radius-pill;
     padding: 4rpx @spacing-12;
+    border: 2rpx solid @black;
   }
 
   &-card-status-text {
     font-size: @font-xs;
-    color: @status-sale-generated-text;
+    color: @black;
+    font-weight: @weight-bold;
   }
 
   // ===== 统计数据 =====
@@ -70,22 +73,25 @@
 
   &-card-stat-value {
     font-size: @font-lg;
-    font-weight: 600;
-    color: @text-1;
+    font-weight: @weight-black;
+    color: @text-primary;
     margin-bottom: @spacing-4;
   }
 
   &-card-stat-label {
     font-size: @font-xs;
-    color: @text-3;
+    color: @text-secondary;
+    font-weight: @weight-bold;
+    text-transform: uppercase;
   }
 
   // ===== 时间 =====
   &-card-time {
     display: block;
     font-size: @font-sm;
-    color: @text-3;
+    color: @text-secondary;
     margin-bottom: @spacing-16;
+    font-weight: @weight-medium;
   }
 
   // ===== 操作按钮 =====
@@ -100,19 +106,20 @@
     align-items: center;
     justify-content: center;
     height: 64rpx;
-    border-radius: @radius-pill;
+    border-radius: @radius-btn;
     font-size: @font-sm;
-    font-weight: 500;
+    font-weight: @weight-extrabold;
+    border: 4rpx solid @black;
+    .neo-interactive();
 
     &--primary {
-      background: linear-gradient(135deg, @primary, @primary-dark);
-      color: #fff;
+      background: @black;
+      color: @white;
     }
 
     &--secondary {
-      background: @primary-light;
-      color: @primary-dark;
-      border: 2rpx solid @primary;
+      background: @white;
+      color: @black;
     }
   }
 

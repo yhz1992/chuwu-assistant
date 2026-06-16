@@ -11,7 +11,8 @@
     align-items: center;
     min-height: 300rpx;
     font-size: @font-md;
-    color: @text-3;
+    color: @text-secondary;
+    font-weight: @weight-bold;
   }
 
   &-nav {
@@ -20,8 +21,8 @@
     justify-content: space-between;
     height: 88rpx;
     padding: 0 @spacing-24;
-    background: @card;
-    border-bottom: 1rpx solid @border;
+    background: @white;
+    border-bottom: 4rpx solid @black;
 
     &-btn {
       min-width: 80rpx;
@@ -29,19 +30,20 @@
       align-items: center;
 
       &--primary { justify-content: flex-end; }
-      &--disabled { opacity: 0.5; }
+      &--disabled { opacity: @opacity-disabled; }
     }
 
     &-btn-text {
       font-size: @font-md;
-      color: @primary;
-      font-weight: 500;
+      color: @black;
+      font-weight: @weight-extrabold;
     }
 
     &-title {
       font-size: @font-lg;
-      font-weight: 600;
-      color: @text-1;
+      font-weight: @weight-extrabold;
+      color: @text-primary;
+      letter-spacing: -0.5rpx;
     }
   }
 
@@ -61,8 +63,8 @@
   &-section-title {
     display: block;
     font-size: @font-md;
-    font-weight: 600;
-    color: @text-1;
+    font-weight: @weight-extrabold;
+    color: @text-primary;
     margin-bottom: @spacing-16;
   }
 
@@ -78,8 +80,9 @@
   &-label {
     width: 120rpx;
     font-size: @font-sm;
-    color: @text-2;
+    color: @text-primary;
     flex-shrink: 0;
+    font-weight: @weight-bold;
 
     &.required::before {
       content: '*';
@@ -92,10 +95,11 @@
     flex: 1;
     height: 72rpx;
     padding: 0 @spacing-16;
-    background: @bg;
+    background: @white;
     border-radius: @radius-sm;
     font-size: @font-sm;
-    color: @text-1;
+    color: @text-primary;
+    border: 2rpx solid @black;
   }
 
   &-input-suffix {
@@ -108,8 +112,9 @@
 
   &-suffix {
     font-size: @font-sm;
-    color: @text-3;
+    color: @text-secondary;
     margin-left: @spacing-8;
+    font-weight: @weight-bold;
   }
 
   &-picker {
@@ -119,23 +124,25 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 @spacing-16;
-    background: @bg;
+    background: @white;
     border-radius: @radius-sm;
     font-size: @font-sm;
-    color: @text-1;
+    color: @text-primary;
+    border: 2rpx solid @black;
 
-    &--empty { color: @text-3; }
+    &--empty { color: @text-tertiary; }
   }
 
   &-textarea {
     flex: 1;
     height: 160rpx;
     padding: @spacing-16;
-    background: @bg;
+    background: @white;
     border-radius: @radius-sm;
     font-size: @font-sm;
-    color: @text-1;
+    color: @text-primary;
     line-height: 1.5;
+    border: 2rpx solid @black;
   }
 
   &-bottom {
@@ -148,29 +155,31 @@
     display: flex;
     flex-direction: column;
     gap: @spacing-16;
-    background: @card;
-    box-shadow: 0 -4rpx 16rpx rgba(0, 0, 0, 0.06);
+    background: @white;
+    border-top: 4rpx solid @black;
     z-index: 10;
   }
 
   &-bottom-btn {
     height: 88rpx;
-    border-radius: @radius-lg;
+    border-radius: @radius-btn;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 4rpx solid @black;
+    .neo-interactive();
 
     &--primary {
-      background: @primary;
-      .wishlist-add-bottom-btn-text { color: #fff; font-weight: 500; }
+      background: @black;
+      .wishlist-add-bottom-btn-text { color: @white; font-weight: @weight-extrabold; }
     }
 
     &--secondary {
-      background: @primary-light;
-      .wishlist-add-bottom-btn-text { color: @primary; font-weight: 500; }
+      background: @white;
+      .wishlist-add-bottom-btn-text { color: @black; font-weight: @weight-extrabold; }
     }
 
-    &--disabled { opacity: 0.5; }
+    &--disabled { opacity: @opacity-disabled; }
 
     &-text { font-size: @font-lg; }
   }

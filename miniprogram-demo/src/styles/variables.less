@@ -1,24 +1,43 @@
-// ===== 品牌色 =====
-@primary: #4F6EF7;
-@primary-dark: #3B54E0;
-@primary-light: #EEF1FE;
+// ============================================
+// Neo-Brutalist Pastel 设计 Token
+// ============================================
+
+// ===== 品牌 Pastel 四色体系 =====
+@lavender: #E8E4F3;       // 背景色
+@pink: #FF69B4;           // 强调色 1（主操作）
+@mint: #98FF98;           // 强调色 2（成功/确认）
+@peach: #FFBC99;          // 强调色 3（辅色）
+
+// ===== 黑白体系 =====
+@black: #000000;
+@white: #FFFFFF;
+@text-primary: #1A1A1A;
+@text-secondary: #666666;
+@text-tertiary: #999999;
+@text-placeholder: #BFBFBF;
+
+// ===== 向后兼容别名 =====
+@primary: @pink;
+@primary-dark: #E0559A;
+@primary-light: #FFF0F5;
 
 // ===== 功能色 =====
-@success: #34C759;
-@warning: #FF9500;
+@success: @mint;
+@success-dark: #70E070;
+@warning: #FFB84D;
 @danger: #FF3B30;
-@info: #4F6EF7;
+@info: @pink;
 
-// ===== 文字颜色 =====
-@text-1: #1A1A1A;
-@text-2: #666666;
-@text-3: #999999;
-@text-4: #BFBFBF;
+// ===== 文字颜色（别名） =====
+@text-1: @text-primary;
+@text-2: @text-secondary;
+@text-3: @text-tertiary;
+@text-4: @text-placeholder;
 
 // ===== 背景/卡片 =====
-@bg: #F5F6FA;
-@card: #FFFFFF;
-@border: #E8E8E8;
+@bg: @lavender;
+@card: @white;
+@border: @black;
 @divider: #F0F0F0;
 
 // ===== 字号 =====
@@ -28,6 +47,14 @@
 @font-md: 28rpx;
 @font-sm: 24rpx;
 @font-xs: 20rpx;
+
+// ===== 字重 =====
+@weight-extrabold: 800;
+@weight-black: 900;
+@weight-bold: 700;
+@weight-semibold: 600;
+@weight-medium: 500;
+@weight-normal: 400;
 
 // ===== 间距 =====
 @spacing-4: 4rpx;
@@ -39,59 +66,68 @@
 @spacing-32: 32rpx;
 @spacing-48: 48rpx;
 
-// ===== 圆角 =====
+// ===== Neo-Brutalist 圆角 =====
 @radius-sm: 8rpx;
-@radius-md: 12rpx;
-@radius-lg: 16rpx;
-@radius-xl: 24rpx;
+@radius-md: 16rpx;        // 按钮标准圆角
+@radius-lg: 24rpx;
+@radius-xl: 40rpx;        // 卡片超大圆角
 @radius-pill: 999rpx;
 
-// ===== 阴影 =====
-@shadow-sm: 0 2rpx 8rpx rgba(0, 0, 0, 0.04);
-@shadow-md: 0 4rpx 16rpx rgba(0, 0, 0, 0.06);
-@shadow-lg: 0 8rpx 32rpx rgba(0, 0, 0, 0.08);
+// 别名
+@radius-btn: @radius-md;
+@radius-card: @radius-xl;
+
+// ===== Neo-Brutalist 实心阴影 =====
+@shadow-bold: 4rpx 4rpx 0px 0px @black;
+@shadow-bold-sm: 1rpx 1rpx 0px 0px @black;
+@shadow-bold-lg: 6rpx 6rpx 0px 0px @black;
+
+// 保持向后兼容
+@shadow-sm: @shadow-bold;
+@shadow-md: @shadow-bold;
+@shadow-lg: @shadow-bold-lg;
+
+// ===== 增强阴影（旧系统兼容） =====
+@shadow-card-hover: 2rpx 2rpx 0px 0px @black;
+@shadow-elevated: @shadow-bold-lg;
+@shadow-float: @shadow-bold-lg;
 
 // ===== 状态标签颜色 =====
-@status-arrived-bg: #E8F8EE;
-@status-arrived-text: #34C759;
-@status-preorder-bg: #FFF5E6;
-@status-preorder-text: #FF9500;
+@status-arrived-bg: @mint;
+@status-arrived-text: @black;
+@status-preorder-bg: @peach;
+@status-preorder-text: @black;
 @status-pending-payment-bg: #FFECEB;
 @status-pending-payment-text: #FF3B30;
-@status-pending-shipment-bg: #EEF1FE;
-@status-pending-shipment-text: #4F6EF7;
-@status-pending-receipt-bg: #EEF1FE;
-@status-pending-receipt-text: #4F6EF7;
-@status-for-sale-bg: #EEF1FE;
-@status-for-sale-text: #4F6EF7;
+@status-pending-shipment-bg: #FFF0F5;
+@status-pending-shipment-text: #E0559A;
+@status-pending-receipt-bg: @lavender;
+@status-pending-receipt-text: @black;
+@status-for-sale-bg: @mint;
+@status-for-sale-text: @black;
 @status-sold-bg: #F2F2F2;
-@status-sold-text: #999999;
+@status-sold-text: @text-tertiary;
 @status-not-for-sale-bg: #F2F2F2;
-@status-not-for-sale-text: #999999;
+@status-not-for-sale-text: @text-tertiary;
 
 // 出物清单状态
 @status-sale-draft-bg: #F5F5F5;
-@status-sale-draft-text: #999999;
-@status-sale-generated-bg: #E8F8EE;
-@status-sale-generated-text: #34C759;
-@status-sale-shared-bg: #FFF3E6;
-@status-sale-shared-text: #FF9500;
+@status-sale-draft-text: @text-tertiary;
+@status-sale-generated-bg: @mint;
+@status-sale-generated-text: @black;
+@status-sale-shared-bg: @peach;
+@status-sale-shared-text: @black;
 
-// ===== 渐变色 =====
-@gradient-primary: linear-gradient(135deg, #4F6EF7 0%, #7B8FF7 100%);
-@gradient-primary-dark: linear-gradient(135deg, #3B54E0 0%, #5C6FF7 100%);
-@gradient-warm: linear-gradient(135deg, #FF9500 0%, #FFB84D 100%);
-@gradient-cool: linear-gradient(135deg, #34C759 0%, #5DD877 100%);
+// ===== 渐变色（Neo-Brutalist 少用渐变，保留个别场景） =====
+@gradient-primary: linear-gradient(135deg, @pink 0%, #FF8DC7 100%);
+@gradient-primary-dark: linear-gradient(135deg, #E0559A 0%, @pink 100%);
+@gradient-warm: linear-gradient(135deg, @peach 0%, #FFD4B8 100%);
+@gradient-cool: linear-gradient(135deg, @mint 0%, #B8FFB8 100%);
 
 // ===== 过渡动画 =====
-@transition-fast: 0.15s ease;
-@transition-base: 0.25s ease;
-@transition-slow: 0.35s ease;
-
-// ===== 增强阴影 =====
-@shadow-card-hover: 0 8rpx 24rpx rgba(79, 110, 247, 0.10);
-@shadow-elevated: 0 12rpx 40rpx rgba(0, 0, 0, 0.10);
-@shadow-float: 0 16rpx 48rpx rgba(79, 110, 247, 0.12);
+@transition-fast: 0.1s ease;
+@transition-base: 0.2s ease;
+@transition-slow: 0.3s ease;
 
 // ===== 透明度 =====
 @opacity-disabled: 0.4;

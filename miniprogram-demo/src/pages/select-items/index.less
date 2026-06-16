@@ -16,17 +16,19 @@
   &-search-input {
     flex: 1;
     height: 72rpx;
-    background: #f5f5f5;
-    border-radius: @radius-pill;
+    background: @white;
+    border-radius: @radius-btn;
     padding: 0 @spacing-24;
     font-size: @font-md;
-    color: @text-1;
+    color: @text-primary;
+    border: 4rpx solid @black;
+    box-shadow: @shadow-bold;
   }
 
   &-search-btn {
     font-size: @font-md;
-    color: @primary-dark;
-    font-weight: 500;
+    color: @black;
+    font-weight: @weight-extrabold;
     flex-shrink: 0;
   }
 
@@ -52,7 +54,8 @@
 
     &-text {
       font-size: @font-sm;
-      color: @text-3;
+      color: @text-secondary;
+      font-weight: @weight-bold;
     }
   }
 
@@ -62,8 +65,8 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: @card;
-    box-shadow: 0 -4rpx 16rpx rgba(0, 0, 0, 0.08);
+    background: @white;
+    border-top: 4rpx solid @black;
     padding: @spacing-16 @spacing-24;
     padding-bottom: calc(@spacing-16 + env(safe-area-inset-bottom, 0px));
     z-index: 100;
@@ -76,13 +79,14 @@
 
     &-count {
       font-size: @font-md;
-      color: @text-2;
+      color: @text-primary;
+      font-weight: @weight-bold;
     }
 
     &-num {
       font-size: @font-lg;
-      font-weight: 700;
-      color: @primary-dark;
+      font-weight: @weight-black;
+      color: @black;
     }
 
     &-btn {
@@ -93,8 +97,8 @@
     }
 
     &-btn-text {
-      color: #ffffff;
-      font-weight: 500;
+      color: @white;
+      font-weight: @weight-extrabold;
     }
   }
 }

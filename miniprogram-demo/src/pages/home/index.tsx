@@ -154,7 +154,7 @@ export default function Home() {
             onClick={() => handleQuickAction(action)}
           >
             <View className='home-action-icon-wrap'>
-              <Icon name={action.icon} size={40} color='#4F6EF7' />
+              <Icon name={action.icon} size={40} color='#000000' />
             </View>
             <Text className='home-action-label'>{action.label}</Text>
           </View>
@@ -165,7 +165,7 @@ export default function Home() {
       {hasNoCollections && (
         <View className='home-empty-guide'>
           <View className='home-empty-guide-card'>
-            <Icon name='package' size={64} color='#4F6EF7' />
+            <Icon name='package' size={64} color='#000000' />
             <Text className='home-empty-guide-title'>还没有记录收藏</Text>
             <Text className='home-empty-guide-desc'>
               点击上方"记一件谷子"开始记录你的收藏吧

@@ -32,3 +32,5 @@ uploads/
 # H2 Database
 *.mv.db
 *.trace.db
+.codegraph/
+.codegraphy/

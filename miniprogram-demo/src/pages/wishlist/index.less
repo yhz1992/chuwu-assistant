@@ -14,18 +14,19 @@
     flex: 1;
     display: flex;
     align-items: center;
-    background: @bg;
-    border-radius: @radius-lg;
+    background: @white;
+    border-radius: @radius-btn;
     padding: 0 @spacing-16;
     height: 72rpx;
     gap: @spacing-8;
+    border: 4rpx solid @black;
   }
 
   &-search-input {
     flex: 1;
     height: 72rpx;
     font-size: @font-md;
-    color: @text-1;
+    color: @text-primary;
   }
 
   &-search-clear {
@@ -40,9 +41,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: @primary;
-    border-radius: @radius-lg;
-    box-shadow: 0 4rpx 12rpx rgba(79, 110, 247, 0.3);
+    background: @mint;
+    border-radius: @radius-btn;
+    border: 4rpx solid @black;
+    box-shadow: @shadow-bold;
   }
 
   &-filter-bar {
@@ -62,20 +64,22 @@
     padding: 0 @spacing-24;
     margin-right: @spacing-16;
     border-radius: @radius-pill;
-    background: @card;
+    background: @white;
+    border: 2rpx solid @black;
 
     &--active {
-      background: @primary;
+      background: @mint;
     }
   }
 
   &-filter-tab-text {
     font-size: @font-sm;
-    color: @text-2;
+    color: @text-primary;
+    font-weight: @weight-bold;
 
     &--active {
-      color: #fff;
-      font-weight: 500;
+      color: @black;
+      font-weight: @weight-extrabold;
     }
   }
 
@@ -91,19 +95,18 @@
     align-items: center;
     padding: @spacing-32;
     font-size: @font-sm;
-    color: @text-3;
+    color: @text-secondary;
+    font-weight: @weight-bold;
   }
 
   // 心愿卡片
   &-card {
-    .card();
+    .interactive-card();
     display: flex;
     align-items: flex-start;
     padding: @spacing-20;
     margin-bottom: @spacing-12;
     gap: @spacing-16;
-
-    &:active { opacity: 0.85; }
   }
 
   &-card-image-wrap {
@@ -112,6 +115,7 @@
     border-radius: @radius-md;
     overflow: hidden;
     flex-shrink: 0;
+    border: 4rpx solid @black;
   }
 
   &-card-image {
@@ -125,7 +129,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: @divider;
+    background: @lavender;
   }
 
   &-card-info {
@@ -142,8 +146,8 @@
 
   &-card-name {
     font-size: @font-lg;
-    font-weight: 500;
-    color: @text-1;
+    font-weight: @weight-extrabold;
+    color: @text-primary;
     flex: 1;
     .text-ellipsis(1);
   }
@@ -153,29 +157,31 @@
     flex-shrink: 0;
 
     &--wish {
-      background: @status-preorder-bg;
-      color: @status-preorder-text;
+      background: @peach;
+      color: @black;
     }
     &--bought {
-      background: @status-arrived-bg;
-      color: @status-arrived-text;
+      background: @mint;
+      color: @black;
     }
     &--postponed {
-      background: @status-sold-bg;
-      color: @status-sold-text;
+      background: #F2F2F2;
+      color: @text-tertiary;
     }
   }
 
   &-card-status-text {
     font-size: @font-xs;
     line-height: 1;
+    font-weight: @weight-bold;
   }
 
   &-card-subtitle {
     font-size: @font-sm;
-    color: @text-3;
+    color: @text-secondary;
     margin-bottom: @spacing-8;
     .text-ellipsis(1);
+    font-weight: @weight-medium;
   }
 
   &-card-footer {
@@ -188,7 +194,7 @@
   &-card-price {
     font-size: @font-sm;
     color: @danger;
-    font-weight: 500;
+    font-weight: @weight-extrabold;
   }
 
   &-card-priority {
@@ -198,27 +204,28 @@
     font-size: @font-xs;
 
     &.priority-normal {
-      background: @primary-light;
-      color: @primary;
+      background: @lavender;
+      color: @black;
     }
     &.priority-high {
-      background: @warning;
-      color: #fff;
+      background: @peach;
+      color: @black;
     }
     &.priority-must {
       background: @danger;
-      color: #fff;
+      color: @white;
     }
   }
 
   &-card-priority-text {
     font-size: @font-xs;
     line-height: 1;
+    font-weight: @weight-bold;
   }
 
   &-card-notes {
     font-size: @font-xs;
-    color: @text-3;
+    color: @text-secondary;
     .text-ellipsis(1);
   }
 
